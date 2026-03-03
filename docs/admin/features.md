@@ -1,18 +1,6 @@
 # Admin 주요 기능 상세
 
-## 1. 인증 및 접근 제어 (IAM)
-
-* **승인 기반 가입**: 회사 이메일 인증 후 관리자 승인을 거쳐야 사용 가능
-* **역할 분리**: 일반 사용자 / 중간 관리자 / 슈퍼 관리자 권한 차등 부여
-
-{% hint style="success" %}
-**설명 포인트**  
-금융권이나 대기업처럼 **"누가 시스템에 접근하는지"** 명확해야 하는 조직에 필수적입니다.
-{% endhint %}
-
----
-
-## 2. AI 모델 정책 및 라우팅 (Model Governance & Routing)
+## 1. AI 모델 정책 및 라우팅 (Model Governance & Routing)
 
 ![AI 모델 정책 설정 화면](../assets/ADMIN_AI_MODEL.png)
 
@@ -31,7 +19,7 @@
 
 ---
 
-## 3. 도구 및 연동 통제 (Tool Control)
+## 2. 도구 및 연동 통제 (Tool Control)
 
 ![MCP 도구 설정 화면](../assets/ADMIN_MCP.png)
 
@@ -45,7 +33,7 @@
 
 ---
 
-## 4. 조직 지식 관리 (Knowledge Base)
+## 3. 조직 지식 관리 (Knowledge Base)
 
 ![RAG 지식 관리 화면](../assets/ADMIN_RAG.png)
 
@@ -60,7 +48,7 @@
 
 ---
 
-## 5. 개발 규칙 및 스킬 (Rules & Skills)
+## 4. 개발 규칙 및 스킬 (Rules & Skills)
 
 ![개발 규칙 설정 화면](../assets/ADMIN_SKILLS.png)
 
@@ -75,7 +63,7 @@
 
 ---
 
-## 6. 자동 대응 및 핫로드 (Hot Load & Auto-Fix)
+## 5. 자동 대응 및 핫로드 (Hot Load & Auto-Fix)
 
 ![핫로드 설정 화면](../assets/ADMIN_HOTLOAD.png)
 
@@ -90,7 +78,7 @@
 
 ---
 
-## 7. 보안 및 제외 정책 (Security Policy)
+## 6. 보안 및 제외 정책 (Security Policy)
 
 ![보안 규칙 설정 화면](../assets/ADMIN_SECURITY.png)
 
@@ -109,9 +97,9 @@
 
 ---
 
-## 8. 운영 모니터링 (Monitoring)
+## 7. 운영 모니터링 (Monitoring)
 
-![운영 대시보드](../assets/ADMIN_DASHBOARD.png)
+![운영 대시보드](../assets/ADMIN_MONITORING.png)
 
 * **대시보드**: 일별/월별 토큰 사용량, API 호출 횟수 시각화
 * **감사 로그**: 누가 언제 어떤 모델을 사용했는지 이력 추적 (프롬프트/응답 로깅 옵션 제공)
