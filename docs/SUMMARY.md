@@ -1,7 +1,7 @@
 # Summary
 
 - [CodePilot IDE 개요](README.md)
-  - [주요 기능 (Core Features)](ide/features.md)
+  - [주요 기능](ide/features.md)
   - [설정 메뉴 가이드](ide/settings.md)
   - [도입 효과 및 활용 사례](ide/use-cases.md)
 - [CodePilot Admin 개요](admin/README.md)
