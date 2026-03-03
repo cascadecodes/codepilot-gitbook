@@ -78,7 +78,6 @@
 
 * **금지 명령어**: `rm`, `shutdown`, `chmod` 등 위험 명령어 실행 원천 차단
 * **파일 접근 제한**: `.env`, `config/secrets.yml` 등 민감 파일 읽기 차단
-* **PII 필터링**: 프롬프트에 포함된 개인정보(전화번호, 이메일 등) 마스킹 처리
 
 ![제외 패턴 설정 화면](../assets/ADMIN_PATTERN.png)
 
