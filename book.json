@@ -1,0 +1,14 @@
+{
+  "title": "CodePilot 제품 소개서",
+  "author": "CodePilot Team",
+  "language": "ko",
+  "structure": {
+    "readme": "docs/README.md",
+    "summary": "docs/SUMMARY.md"
+  },
+  "plugins": [
+    "expandable-chapters",
+    "hints",
+    "back-to-top-button"
+  ]
+}
