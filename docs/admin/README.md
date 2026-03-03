@@ -1,4 +1,4 @@
-# 👮 CodePilot Admin 개요
+# CodePilot Admin 개요
 
 ## 1) 제품 한 줄 소개
 
@@ -7,7 +7,7 @@
 CodePilot Admin은 조직이 AI 개발 도구를 **안전하고 일관되게 운영**하도록 돕는 통합 관리 콘솔입니다.  
 개발자 개개인이 제각각 사용하는 AI를 **"회사 기준에 맞는 팀 자산"**으로 전환합니다.
 
-![Admin 대시보드 예시](https://placehold.co/800x450/EFEFEF/666666?text=Admin+Dashboard)
+![Admin 대시보드 예시](../assets/ADMIN_DASHBOARD.png)
 
 ## 2) 왜 Admin이 필요한가요?
 
