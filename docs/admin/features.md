@@ -58,7 +58,7 @@
 
 ---
 
-## 5. Hot Load
+## 5. 키워드 기반 자동 명령 실행 (Hot Load)
 
 ![핫로드 설정 화면](../assets/ADMIN_HOTLOAD.png)
 
