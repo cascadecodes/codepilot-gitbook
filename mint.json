@@ -1,0 +1,48 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "CodePilot 제품 소개서",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#1D4ED8",
+    "light": "#3B82F6",
+    "dark": "#1E40AF"
+  },
+  "topbarLinks": [],
+  "topbarCtaButton": {
+    "name": "시작하기",
+    "url": "#"
+  },
+  "navigation": [
+    {
+      "group": "소개",
+      "pages": ["introduction"]
+    },
+    {
+      "group": "CodePilot IDE",
+      "pages": [
+        "ide/features",
+        "ide/settings",
+        "ide/use-cases"
+      ]
+    },
+    {
+      "group": "CodePilot Admin",
+      "pages": [
+        "admin/overview",
+        "admin/features",
+        "admin/policies"
+      ]
+    },
+    {
+      "group": "아키텍처",
+      "pages": [
+        "architecture/settings-flow"
+      ]
+    }
+  ],
+  "footerSocials": {}
+}
