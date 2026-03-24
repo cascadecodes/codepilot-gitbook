@@ -1,17 +1,38 @@
 ---
-title: CodePilot IDE 개요
+title: CodePilot 소개
 description: 답변만 해주는 챗봇이 아닙니다. 함께 일하는 동료입니다.
 ---
 
-## 1) 제품 한 줄 소개
+## 제품 한 줄 소개
 
 > **"답변만 해주는 챗봇이 아닙니다. 함께 일하는 동료입니다."**
 
 CodePilot IDE는 개발자가 일하는 화면 안에서 **질문 → 구현 → 검증 → 수정**까지 이어지는 전 과정을 함께 수행하는 **AI 기반 업무 파트너**입니다.
 
-![IDE 메인 화면 예시](/images/IDE_MAIN.png)
+![IDE 메인 화면](../images/IDE_MAIN.png)
 
-## 2) 어떤 문제를 해결하나요?
+---
+
+## 바로 시작하기
+
+<CardGroup cols={2}>
+  <Card title="설치 및 시작하기" icon="download" href="/ide/installation">
+    VS Code 마켓플레이스 설치, 로그인, 모델 설정
+  </Card>
+  <Card title="빠른 시작 가이드" icon="rocket" href="/ide/quickstart">
+    첫 번째 요청, 파일 멘션, 변경 승인 방법
+  </Card>
+  <Card title="채팅 모드 (CODE/ASK/PLAN)" icon="layer-group" href="/ide/chat-modes">
+    세 가지 모드의 차이와 활용법
+  </Card>
+  <Card title="주요 기능 전체 보기" icon="list-check" href="/ide/features">
+    멀티 LLM, 멀티 에이전트, 보안 가드레일 등
+  </Card>
+</CardGroup>
+
+---
+
+## 어떤 문제를 해결하나요?
 
 ### 반복적인 작업으로 인한 시간 낭비
 * 기능 구현 전 요구사항 정리 및 설계 시간
@@ -29,3 +50,17 @@ CodePilot IDE는 개발자가 일하는 화면 안에서 **질문 → 구현 →
 CodePilot IDE는 **"개인 생산성"**과 **"팀 표준 준수"**를 동시에 달성하여,
 개발자는 핵심 로직에만 집중하고 나머지는 AI와 시스템이 처리하도록 돕습니다.
 </Tip>
+
+---
+
+## 구성 요소
+
+### CodePilot IDE (VS Code 확장)
+개발자가 직접 사용하는 AI 코딩 어시스턴트. VS Code 안에서 채팅, 파일 수정, 명령 실행, 코드 자동완성까지 제공합니다.
+
+### CodePilot Admin (웹 관리 콘솔)
+조직 관리자가 AI 모델 정책, 보안 규칙, 코딩 컨벤션, 사용량 모니터링을 통합 관리하는 대시보드입니다.
+
+<Card title="CodePilot Admin 소개" icon="shield-halved" href="/admin/overview">
+  조직 단위 AI 개발 환경 통제 및 모니터링
+</Card>

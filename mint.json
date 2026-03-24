@@ -24,6 +24,9 @@
     {
       "group": "CodePilot IDE",
       "pages": [
+        "ide/installation",
+        "ide/quickstart",
+        "ide/chat-modes",
         "ide/features",
         "ide/settings",
         "ide/use-cases"
