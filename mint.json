@@ -17,6 +17,7 @@
     "url": "#"
   },
   "tabs": [
+    { "name": "소개", "url": "introduction" },
     { "name": "IDE", "url": "ide" },
     { "name": "Admin", "url": "admin" }
   ],
