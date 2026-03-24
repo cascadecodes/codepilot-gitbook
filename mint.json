@@ -39,12 +39,6 @@
         "admin/features",
         "admin/policies"
       ]
-    },
-    {
-      "group": "아키텍처",
-      "pages": [
-        "architecture/settings-flow"
-      ]
     }
   ],
   "footerSocials": {}

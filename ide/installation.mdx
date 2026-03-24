@@ -3,17 +3,6 @@ title: 설치 및 시작하기
 description: CodePilot IDE를 VS Code에 설치하고 처음 사용하는 방법을 안내합니다.
 ---
 
-## 시스템 요구사항
-
-| 항목 | 최소 사양 |
-|------|-----------|
-| VS Code | 1.85.0 이상 |
-| OS | Windows 10+, macOS 11+, Linux (Ubuntu 20.04+) |
-| 인터넷 연결 | 필요 (클라우드 모델 사용 시) |
-| Ollama | 선택 사항 (로컬 모델 사용 시) |
-
----
-
 ## VSIX 파일로 설치
 
 CodePilot IDE는 `.vsix` 파일을 통해 직접 설치합니다.
@@ -25,10 +14,12 @@ CodePilot IDE는 `.vsix` 파일을 통해 직접 설치합니다.
   <Step title="VS Code 명령 팔레트 열기">
     `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) 를 눌러 명령 팔레트를 엽니다.
 
-    ![VSIX 설치 화면](../images/IDE_INSTALL.png)
+    ![명령 팔레트 열기](../images/IDE_OPEN_SETTING.png)
   </Step>
   <Step title="VSIX에서 설치 선택">
     검색창에 **"vsix"** 를 입력하고 **Extensions: Install from VSIX...** 를 선택합니다.
+
+    ![VSIX 설치 화면](../images/IDE_INSTALL.png)
   </Step>
   <Step title="파일 선택">
     파일 탐색기에서 받은 `.vsix` 파일을 선택하고 **Install** 버튼을 클릭합니다.
@@ -49,14 +40,16 @@ CodePilot IDE는 `.vsix` 파일을 통해 직접 설치합니다.
 
 <Steps>
   <Step title="로그인">
-    채팅 패널 상단의 **로그인** 버튼을 클릭하고 계정 정보(이메일 + 비밀번호)를 입력합니다.
+    채팅 패널 상단의 **로그인** 버튼을 클릭하면 Google 로그인 화면이 열립니다. Google 계정으로 로그인합니다.
 
-    ![계정 로그인 화면](../images/IDE_ACCOUNT.png)
+    ![로그인 화면](../images/IDE_LOGIN.png)
   </Step>
   <Step title="조직 연결">
     로그인 후 소속 조직을 선택하거나 조직 코드를 입력합니다.
 
     조직에 연결되면 관리자가 설정한 **AI 모델 정책**, **보안 규칙**, **코딩 컨벤션**이 자동으로 적용됩니다.
+
+    ![계정 및 조직 연결 화면](../images/IDE_ACCOUNT.png)
 
     <Tip>
     조직 코드를 모르면 관리자에게 문의하세요. 개인 사용 시에는 조직 없이도 사용할 수 있습니다.
