@@ -16,28 +16,47 @@
     "name": "시작하기",
     "url": "#"
   },
+  "tabs": [
+    { "name": "IDE", "url": "ide" },
+    { "name": "Admin", "url": "admin" }
+  ],
   "navigation": [
     {
       "group": "소개",
       "pages": ["introduction"]
     },
     {
-      "group": "CodePilot IDE",
-      "pages": [
-        "ide/installation",
-        "ide/quickstart",
-        "ide/chat-modes",
-        "ide/features",
-        "ide/settings",
-        "ide/use-cases"
+      "tab": "IDE",
+      "groups": [
+        {
+          "group": "시작하기",
+          "pages": [
+            "ide/installation",
+            "ide/quickstart"
+          ]
+        },
+        {
+          "group": "가이드",
+          "pages": [
+            "ide/chat-modes",
+            "ide/features",
+            "ide/settings",
+            "ide/use-cases"
+          ]
+        }
       ]
     },
     {
-      "group": "CodePilot Admin",
-      "pages": [
-        "admin/overview",
-        "admin/features",
-        "admin/policies"
+      "tab": "Admin",
+      "groups": [
+        {
+          "group": "Admin 콘솔",
+          "pages": [
+            "admin/overview",
+            "admin/features",
+            "admin/policies"
+          ]
+        }
       ]
     }
   ],
