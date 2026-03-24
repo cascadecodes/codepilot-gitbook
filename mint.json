@@ -26,37 +26,27 @@
       "pages": ["introduction"]
     },
     {
-      "tab": "IDE",
-      "groups": [
-        {
-          "group": "시작하기",
-          "pages": [
-            "ide/installation",
-            "ide/quickstart"
-          ]
-        },
-        {
-          "group": "가이드",
-          "pages": [
-            "ide/chat-modes",
-            "ide/features",
-            "ide/settings",
-            "ide/use-cases"
-          ]
-        }
+      "group": "시작하기",
+      "pages": [
+        "ide/installation",
+        "ide/quickstart"
       ]
     },
     {
-      "tab": "Admin",
-      "groups": [
-        {
-          "group": "Admin 콘솔",
-          "pages": [
-            "admin/overview",
-            "admin/features",
-            "admin/policies"
-          ]
-        }
+      "group": "가이드",
+      "pages": [
+        "ide/chat-modes",
+        "ide/features",
+        "ide/settings",
+        "ide/use-cases"
+      ]
+    },
+    {
+      "group": "Admin 콘솔",
+      "pages": [
+        "admin/overview",
+        "admin/features",
+        "admin/policies"
       ]
     }
   ],
