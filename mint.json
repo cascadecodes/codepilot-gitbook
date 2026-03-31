@@ -39,6 +39,7 @@
         "ide/chat-modes",
         "ide/features",
         "ide/settings",
+        "ide/projects",
         "ide/use-cases"
       ]
     },
@@ -47,6 +48,7 @@
       "pages": [
         "admin/overview",
         "admin/features",
+        "admin/projects",
         "admin/policies"
       ]
     }
