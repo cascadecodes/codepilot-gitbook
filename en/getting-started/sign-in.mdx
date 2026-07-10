@@ -78,13 +78,13 @@ In environments that use AI models registered directly without a backend server,
 
 In on-premises environments, you must first specify the server address to connect to. In VS Code Settings (`Ctrl+,`), search for `codepilot` and enter the following items.
 
-| Setting | Description |
-|------|------|
-| **Backend URL** | Your organization's server address |
-| **Auth Mode** | Authentication method (social login / username-password / standalone) |
+| Setting | Description | Default |
+|------|------|--------|
+| **Backend URL** | Your organization's server address | `https://api-codepilot.banya.ai/api/v1` |
+| **Auth Mode** | Authentication method (social login / username-password / standalone) | Social login |
 
 <Tip>
-Organization administrators often set these values in advance at deployment time. If the sign-in screen appears correctly with the defaults, you don't need to change anything.
+If you use the cloud (SaaS) service, **leave the defaults as they are.** In on-premises environments, administrators often set these values in advance at deployment time — if the sign-in screen appears correctly, don't change anything.
 </Tip>
 
 ---
