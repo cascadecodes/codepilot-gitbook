@@ -10,7 +10,9 @@
 
 총 **27장**이 남았습니다. (IDE 10 · CLI 4 · Admin 13)
 
-> 완료: `IDE_INSTALL_EXT_PANEL.png` · `IDE_LOGIN.png` · `IDE_LOGIN_LOCAL.png` · `IDE_LOGIN_LICENSE.png`
+> 완료: `IDE_INSTALL.png` · `IDE_INSTALL_EXT_PANEL.png` · `IDE_FIRST_RUN.png` · `IDE_LOGIN.png` · `IDE_LOGIN_LOCAL.png` · `IDE_LOGIN_LICENSE.png`
+>
+> 촬영 시 화면에 무엇이 함께 찍히는지 확인하세요. 이 저장소는 공개(public)이고, 나중에 이미지를 바꿔도 git 히스토리에는 남습니다.
 
 ---
 
