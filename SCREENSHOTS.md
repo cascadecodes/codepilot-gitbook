@@ -36,7 +36,7 @@
 | 파일명 | 무엇을 찍나 | 사용 위치 |
 |--------|------------|----------|
 | `IDE_MODEL_ADD.png` | 설정 → AI 모델 탭의 **사용자 정의 모델** 영역 — `+ 모델 추가` 버튼과 빈 목록 안내 문구 | AI 모델 연결 |
-| `IDE_MODEL_FORM_GEMINI.png` | **새 AI 모델 추가** 폼 — 프로바이더를 `Google Gemini` 로 선택해 API 엔드포인트가 자동 입력된 상태 | AI 모델 연결 |
+| `IDE_MODEL_FORM_GEMINI.png` | **새 AI 모델 추가** 폼 — 프로바이더 `Google Gemini` 선택, API 엔드포인트 자동 입력됨. **모델 이름은 `Gemini 3.1 Pro`, 모델 ID는 `gemini-3.1-pro-preview` 를 직접 입력한 상태로 촬영** (회색 예시 `gemini-2.5-pro` 가 남아 있으면 안 됨) | AI 모델 연결 |
 | `IDE_MODEL_TEST.png` | 저장된 Gemini 모델 목록 행 — **테스트 / 선택 / 편집 / 삭제** 버튼과 `API 키 저장됨` 표시 | AI 모델 연결 |
 | `IDE_MODEL_KEY_SOURCE.png` | **조직 로그인 상태**의 설정 → AI 모델 — `API Key` 항목에 `관리자 API Key` / `개인 API Key` 드롭다운이 펼쳐진 모습 | AI 모델 연결 |
 
