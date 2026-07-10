@@ -31,6 +31,7 @@
                   "getting-started/install",
                   "getting-started/sign-in",
                   "getting-started/organization",
+                  "getting-started/ai-model",
                   "getting-started/quickstart"
                 ]
               }
@@ -94,6 +95,7 @@
                   "en/getting-started/install",
                   "en/getting-started/sign-in",
                   "en/getting-started/organization",
+                  "en/getting-started/ai-model",
                   "en/getting-started/quickstart"
                 ]
               }
