@@ -8,7 +8,7 @@
 
 ---
 
-총 **22장**이 남았습니다. (IDE 9 · Admin 13)
+총 **16장**이 남았습니다. (IDE 3 · Admin 13)
 
 > CLI 탭은 나중에 작성하기로 하여 문서에서 제거했습니다. CLI 스크린샷 4장(`CLI_WELCOME` · `CLI_LOGIN` · `CLI_SLASH` · `CLI_HEADLESS`)은 그때 다시 목록에 추가하면 됩니다.
 
@@ -18,13 +18,11 @@
 
 ---
 
-## IDE — 설정 (6장)
+## IDE — 설정 (4장)
 
 | 파일명 | 무엇을 찍나 | 사용 위치 |
 |--------|------------|----------|
 | `IDE_ACCOUNT_ORG.png` | 설정 → 계정 탭의 **조직 연결** 영역 — `cpk_...` 플레이스홀더 입력창과 **등록** 버튼 | 조직 연결 |
-| `IDE_INPUT_TOOLBAR.png` | 채팅 입력창 하단 툴바 — 웹검색 토글, Thinking 토글, 이미지/PDF 첨부 버튼 | 명령어와 컨텍스트 |
-| `IDE_EDITOR_CONTEXT_MENU.png` | 에디터에서 코드를 선택하고 우클릭했을 때 나오는 CodePilot 메뉴 (Explain / Fix / Refactor / Add Tests...) | 명령어와 컨텍스트 |
 | `IDE_INLINE_COMPLETION.png` | 에디터에서 회색 Ghost Text로 코드 제안이 뜬 상태 (Tab 수락 전) | 주요 기능 |
 | `IDE_HOOKS.png` | 설정 → **Hooks** 탭 — 등록된 훅 목록과 이벤트/명령어/타임아웃 입력 폼 | 설정 |
 | `IDE_AGENTS.png` | 설정 → **Agents** 탭 — 등록된 에이전트 목록과 이름/설명/시스템 프롬프트/허용 도구 폼 | 설정 |

@@ -44,7 +44,6 @@
                 "group": "가이드",
                 "pages": [
                   "ide/chat-modes",
-                  "ide/commands",
                   "ide/features",
                   "ide/settings",
                   "ide/use-cases"
@@ -99,7 +98,6 @@
                 "group": "Guides",
                 "pages": [
                   "en/ide/chat-modes",
-                  "en/ide/commands",
                   "en/ide/features",
                   "en/ide/settings",
                   "en/ide/use-cases"
