@@ -20,7 +20,7 @@ CodePilot IDE offers four chat modes for different purposes. You can switch betw
 
 ![CODE mode](/images/IDE_CODE.png)
 
-**The default mode that creates, modifies, and deletes files directly and runs terminal commands.** After a task, it automatically proceeds to build and test verification.
+**The default mode that creates, modifies, and deletes files directly and runs terminal commands.** It follows a set procedure (investigate → execute → review), and after editing files it is prompted to verify the changes with build/test commands.
 
 ### When to use it
 
@@ -56,9 +56,10 @@ If CODE mode is about "doing the assigned work following a set procedure," AGENT
 
 | | CODE | AGENT |
 |---|------|-------|
-| Task order | Follows a set procedure | The AI decides on its own |
-| Build verification | Runs automatically | Runs when it judges it necessary |
-| Speed | Stable, adds verification time | Fast, more dependent on model quality |
+| Task order | Follows a set procedure (investigate → execute → review) | The AI decides on its own |
+| Helper agents | None | Spawns them itself for parallel work when needed |
+| Build verification | Recommended (the model decides to run it) | Required (must verify after editing files) |
+| Speed | Stable | Fast, more dependent on model quality |
 
 ### When to use it
 
@@ -124,6 +125,16 @@ Point out any security weaknesses in the current authentication structure. Don't
 ![PLAN mode](/images/IDE_PLAN.png)
 
 **A mode that first establishes an implementation plan without modifying any files.** After reading and analyzing the codebase, it produces a plan that outlines the files to be changed, the implementation steps, and the anticipated risks.
+
+The plan isn't just shown in chat — it's also **saved as a file in your project**. It's saved immediately, regardless of whether you approve it, so you can reopen it later or share and commit it with your team.
+
+```
+<project root>/.codepilot/plans/plan-2026-07-10-142530.md
+```
+
+<Info>
+The numbers in the filename are the save time (`YYYY-MM-DD-HHMMSS`). A new file is created each time you draft a plan; if you open and refine an existing plan, that file is updated instead.
+</Info>
 
 ### When to use it
 
