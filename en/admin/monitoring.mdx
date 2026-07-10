@@ -1,0 +1,78 @@
+---
+title: Monitoring and Logs
+description: View and export token usage, access history, and error logs.
+---
+
+## Dashboard
+
+![Admin dashboard](/images/ADMIN_DASHBOARD.png)
+
+See your organization's status at a glance.
+
+| Area | Contents |
+|------|------|
+| **Stat cards** | Total users, number of projects, active users today, API call count, token usage, recent errors |
+| **Configuration overview** | Number of registered items per category (click to jump to the relevant settings page) |
+| **Recent activity** | Recent history such as configuration changes and member invitations |
+| **Usage trend** | Usage graph by period |
+| **Top users** | Ranked by this month's token usage |
+
+---
+
+## Usage Monitoring
+
+![Usage monitoring](/images/ADMIN_MONITORING.png)
+
+Track token usage and request activity to forecast costs.
+
+| Metric | Description |
+|------|------|
+| Total token usage | All tokens within the period |
+| Average request size | Average tokens per request |
+| Total requests | Number of AI calls |
+| Active users | People who actually used it |
+
+In more detail, you can view **daily usage**, **usage by user**, and **token breakdown by model**.
+
+Choose the last 7, 30, or 90 days, or set a custom range, and use **CSV export** to download the data for internal cost accounting.
+
+<Tip>
+Forecast and optimize operating costs based on **accurate data** rather than vague guesswork. If a particular user's consumption is excessive, you can set a **token limit** on the Team page.
+</Tip>
+
+---
+
+## Access Logs
+
+Review the history of user logins and key administrative activity.
+
+{/* SCREENSHOT: Access Logs page — summary cards (total activity/success/failure/recent activity) and the log table (time/user/activity/IP/status) */}
+![Access logs](/images/ADMIN_ACCESS_LOG.png)
+
+Logged activities include login and logout, organization creation, member invitation/role change/removal, configuration add/edit/delete, document uploads, and API key issuance.
+
+Use **search and filters** to narrow results by a specific user or IP, success or failure, and time period, and export them to CSV.
+
+<Info>
+For security audits and compliance, you can trace who changed which setting and when.
+</Info>
+
+---
+
+## Error Logs
+
+Collect and review system errors and warnings.
+
+{/* SCREENSHOT: Error Logs page — summary cards by level (error/warning/info) and the log table, with a stack trace when a row is expanded */}
+![Error logs](/images/ADMIN_ERROR_LOG.png)
+
+| Filter | Values |
+|------|-----|
+| Level | Critical · Error · Warning · Info |
+| Source | IDE, AI response, tool execution, MCP server, authentication, settings sync, file I/O, admin web, backend |
+
+Expand a row to see the timestamp, user, and details.
+
+<Tip>
+When a team member reports that "the AI isn't responding," filter the error logs by that user and time window to quickly pinpoint the cause.
+</Tip>

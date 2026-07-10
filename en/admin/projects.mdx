@@ -1,0 +1,139 @@
+---
+title: Project Management
+description: Create projects within your organization and manage per-project settings and members independently.
+---
+
+## What is a Project?
+
+A project is an **independent configuration unit within an organization**. You can create multiple projects inside a single organization and apply different AI model, MCP, RAG, rule, and security settings to each one.
+
+```
+Organization
+├── Team default settings   ← Applied to all projects by default
+├── Project A               ← Frontend team settings
+├── Project B               ← Backend team settings
+└── Project C               ← AI/ML team settings
+```
+
+### Team default vs. project settings
+
+| Category | Team default settings | Project settings |
+|------|-------------|-------------|
+| Scope | Entire organization | This project only |
+| Priority | Default value | Overrides the team default |
+| Example | Org-wide shared lint rules | Frontend-only ESLint rules |
+
+<Info>
+Categories with no project-level settings **automatically inherit the team default settings**. When a project setting exists, it overrides only that specific item.
+</Info>
+
+---
+
+## Creating a Project
+
+![Create project](/images/ADMIN_PROJECT_CREATE.png)
+
+Projects are managed from the **scope selector dropdown** at the top of the sidebar.
+
+<Steps>
+  <Step title="Click Add project">
+    Open the dropdown and click **Add project** at the bottom.
+  </Step>
+  <Step title="Enter details">
+    Enter the project name and description.
+  </Step>
+  <Step title="Choose whether to add members">
+    Check **Add all team members** to automatically include every member of the organization. You can adjust this individually later.
+  </Step>
+  <Step title="Add">
+    Once created, you are automatically switched to the new project.
+  </Step>
+</Steps>
+
+---
+
+## Switching Projects
+
+![Switch project](/images/ADMIN_PROJECT_SWITCH.png)
+
+| Selection | Effect |
+|------|------|
+| **Team default** | Manage settings shared across the entire organization |
+| **Project name** | Manage the independent settings of that project |
+
+When you select a project, every settings page displays the **settings specific to that project**.
+
+### Sidebar menu changes
+
+In project scope, organization-level menus are hidden.
+
+<CardGroup cols={2}>
+  <Card title="Team default">
+    ![Team default sidebar](/images/ADMIN_SIDEBAR_TEAM.png)
+  </Card>
+  <Card title="Project">
+    ![Project sidebar](/images/ADMIN_SIDEBAR_PROJECT.png)
+  </Card>
+</CardGroup>
+
+| Menu | Team default | Project |
+|------|:------:|:-------:|
+| Dashboard | O | O |
+| AI Models · MCP Servers · RAG · Skills | O | O |
+| Build/Test · Hot Load · Hooks · Agents | O | O |
+| Security Rules · Exclude Patterns | O | O |
+| Team | O | O (switches to Member management) |
+| Usage Monitoring | O | X |
+| API Keys | O | X |
+| Access Logs · Error Logs | O | X |
+
+<Info>
+Usage Monitoring, API Keys, and logs are **organization-wide** features, so they are not shown in project scope.
+</Info>
+
+---
+
+## Managing Per-Project Settings
+
+In project scope, a read-only **team default settings** panel is shown above each settings page. This lets you compare inherited settings and project-specific settings at a glance.
+
+![Project settings](/images/ADMIN_PROJECT_SETTINGS.png)
+
+<Info>
+To edit the team default settings, switch to **Team default** in the dropdown.
+</Info>
+
+<Tip>
+When you first create a project, its settings are empty. Because the team default settings are inherited automatically, you only need to add the **items that require project-specific customization**.
+</Tip>
+
+---
+
+## Managing Project Members
+
+![Project member management](/images/ADMIN_PROJECT_MEMBERS.png)
+
+In project scope, the **Team** menu changes to **Member management**.
+
+- **Add member** — Search the organization member list and add them to the project
+- **Remove member** — Remove them from the project only (they are not removed from the organization)
+- **Leave project** — Leave the project yourself
+
+<Warning>
+A member removed from a project no longer receives that project's settings in the IDE. They are not removed from the organization itself.
+</Warning>
+
+---
+
+## Editing / Deleting a Project
+
+Hover over a project in the dropdown to reveal the edit and delete icons.
+
+| Action | Description |
+|------|------|
+| **Edit** | Change the project name and description |
+| **Delete** | Delete the project and all project-specific settings |
+
+<Warning>
+Deleting a project also deletes **all of its settings, RAG sources, and member associations**. This cannot be undone. You must type the project name exactly to confirm.
+</Warning>

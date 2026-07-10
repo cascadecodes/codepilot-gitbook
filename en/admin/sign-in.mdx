@@ -1,0 +1,171 @@
+---
+title: Sign in and register an organization
+description: Sign in to the Admin console, create or join an organization, and distribute API keys to your members.
+---
+
+## Sign in
+
+Open the Admin console URL in your browser and the sign-in screen appears.
+
+{/* SCREENSHOT: Admin console sign-in page — email/password form with social sign-in buttons and a Korean/English toggle in the top right */}
+![Admin sign-in](/images/ADMIN_LOGIN.png)
+
+What the sign-in screen looks like depends on the environment your organization uses.
+
+| Environment | Sign-in method |
+|------|------------|
+| Cloud (SaaS) | Sign in with a Google, GitHub, or Microsoft account |
+| On-premises | Sign in with email and password |
+
+<Tip>
+Use the **Korean / English** button in the top right to switch the console language.
+</Tip>
+
+---
+
+## Sign up (on-premises)
+
+In on-premises environments, click **Sign up** below the sign-in screen to create an account.
+
+{/* SCREENSHOT: Admin console sign-up page — name/email/password input form */}
+![Admin sign-up](/images/ADMIN_SIGNUP.png)
+
+| Field | Description |
+|------|------|
+| Name | The name that will be displayed |
+| Email | Your login account |
+| Password | At least 8 characters |
+
+Once you finish signing up, you are taken to the organization setup screen.
+
+<Info>
+**If you forget your password**, contact your organization administrator. For security reasons, email-based reset is not supported; instead, an administrator issues a **temporary password** from the Team management screen. After signing in with the temporary password, change it under **My Profile → Change Password**.
+</Info>
+
+---
+
+## Register an organization
+
+If your signed-in account does not belong to an organization, the organization setup screen appears. You have two options.
+
+{/* SCREENSHOT: Admin onboarding screen — two cards, "Create a new organization" and "Join an organization with an API key" */}
+![Organization setup options](/images/ADMIN_ONBOARDING.png)
+
+### Create a new organization
+
+Choose this if you are the administrator creating the organization for the first time. When you create it, you automatically receive **administrator privileges**.
+
+{/* SCREENSHOT: Create organization form — organization name (required) and department (optional) fields with a "Create organization" button */}
+![Create organization](/images/ADMIN_ORG_CREATE.png)
+
+| Field | Description |
+|------|------|
+| Organization name (Required) | Your company or team name |
+| Department (Optional) | Department name |
+
+<Info>
+Depending on the environment configuration, an organization may enter an **Approval pending** state after it is created. In that case, a waiting screen is shown until approval is complete.
+</Info>
+
+### Join an organization with an API key
+
+Choose this to join an organization that already exists. Enter the **API key starting with `cpk_`** that you received from your administrator.
+
+{/* SCREENSHOT: Join organization with API key form — input with a cpk_ placeholder and a "Join organization" button */}
+![Join organization](/images/ADMIN_ORG_JOIN.png)
+
+---
+
+## Approval status
+
+After you request to join an organization, a waiting screen is shown while you await administrator approval.
+
+{/* SCREENSHOT: Approval pending screen — "Approval pending" message with email/company/department details and a "Check approval status" button */}
+![Approval pending](/images/ADMIN_PENDING.png)
+
+| Status | Screen |
+|------|------|
+| Approval pending | Under administrator review. Refresh with the **Check approval status** button |
+| Rejected | Review the reason, then you can **Apply again** |
+| Insufficient permissions | You belong to the organization but lack administrator privileges. Ask an existing administrator to upgrade your role |
+
+<Info>
+Only **admins and owners** can access the Admin console. If a regular member signs in, an insufficient-permissions notice is shown. Members use the product by joining with the organization API key from the IDE rather than the console.
+</Info>
+
+---
+
+## Distributing API keys to members
+
+To join an organization from the IDE or CLI, members need an **organization API key**. Administrators issue these keys and distribute them.
+
+{/* SCREENSHOT: API Keys page — list of issued keys (masked key, active status, creation date) and a "Create key" button */}
+![API Keys](/images/ADMIN_API_KEY.png)
+
+<Steps>
+  <Step title="Go to the API Keys menu">
+    Navigate to **Management → API Keys** in the sidebar.
+  </Step>
+  <Step title="Create a key">
+    Click **Create key** and enter a key name. Issuing separate keys per team or purpose makes them easier to manage.
+
+    ```
+    e.g., Dev team key, QA team key
+    ```
+  </Step>
+  <Step title="Copy the key">
+    The full key is shown only once, right after creation. Copy it now.
+  </Step>
+  <Step title="Share it with members">
+    Members join by entering this key under IDE Settings → Account → Organization connection.
+  </Step>
+</Steps>
+
+<Warning>
+The full key is shown **only once, right after creation**. After that, only a partially masked form is visible. If you lose a key, issue a new one.
+</Warning>
+
+If you **deactivate** a key, it can no longer be used to join the organization. Members who have already joined are not affected.
+
+---
+
+## Managing members
+
+Manage organization members under **Management → Team** in the sidebar.
+
+{/* SCREENSHOT: Team page — member table (user/role/API key/status/join date/actions) with summary stat cards at the top */}
+![Team management](/images/ADMIN_TEAM.png)
+
+| Action | Description |
+|------|------|
+| Change role | Switch between Admin and Member |
+| Set token limit | Set a per-member usage cap |
+| Reset password | Issue a temporary password (on-premises) |
+| Remove member | Remove them from the organization |
+| Transfer ownership | Hand owner privileges to another admin |
+
+<Warning>
+When you **transfer ownership**, your own role changes to Admin. An owner must transfer ownership before leaving the organization.
+</Warning>
+
+---
+
+## My Profile
+
+Click your profile at the bottom of the sidebar to view your account details and change the console language and password.
+
+{/* SCREENSHOT: My Profile page — profile card, account details, language selection, and Change Password card */}
+![My Profile](/images/ADMIN_PROFILE.png)
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Project management" icon="folder" href="/en/admin/projects">
+    Create projects and separate their settings
+  </Card>
+  <Card title="Configure policies" icon="sliders" href="/en/admin/features">
+    Register AI models, security, and coding rules
+  </Card>
+</CardGroup>

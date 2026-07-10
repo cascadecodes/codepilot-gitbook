@@ -7,26 +7,26 @@ description: 답변만 해주는 챗봇이 아닙니다. 함께 일하는 동료
 
 > **"답변만 해주는 챗봇이 아닙니다. 함께 일하는 동료입니다."**
 
-CodePilot IDE는 개발자가 일하는 화면 안에서 **질문 → 구현 → 검증 → 수정**까지 이어지는 전 과정을 함께 수행하는 **AI 기반 업무 파트너**입니다.
+CodePilot은 개발자가 일하는 화면 안에서 **질문 → 구현 → 검증 → 수정**까지 이어지는 전 과정을 함께 수행하는 **AI 기반 업무 파트너**입니다.
 
-![IDE 메인 화면](../images/IDE_MAIN.png)
+![IDE 메인 화면](/images/IDE_MAIN.png)
 
 ---
 
 ## 바로 시작하기
 
 <CardGroup cols={2}>
-  <Card title="설치 및 시작하기" icon="download" href="/ide/installation">
-    VS Code 확장프로그램 설치, 로그인, 모델 설정
-  </Card램
-  <Card title="빠른 시작 가이드" icon="rocket" href="/ide/quickstart">
-    첫 번째 요청, 파일 멘션, 변경 승인 방법
+  <Card title="설치" icon="download" href="/getting-started/install">
+    VS Code 확장 패널에서 VSIX 파일로 설치합니다
   </Card>
-  <Card title="채팅 모드" icon="layer-group" href="/ide/chat-modes">
-    세 가지 모드의 차이와 활용법
+  <Card title="로그인" icon="right-to-bracket" href="/getting-started/sign-in">
+    소셜 로그인, 아이디/비밀번호, 라이선스 키
   </Card>
-  <Card title="주요 기능 전체 보기" icon="list-check" href="/ide/features">
-    멀티 LLM, 멀티 에이전트, 보안 가드레일 등ㄴ
+  <Card title="조직 연결" icon="building" href="/getting-started/organization">
+    조직 API 키로 팀 정책을 적용받습니다
+  </Card>
+  <Card title="빠른 시작" icon="rocket" href="/getting-started/quickstart">
+    첫 요청, 컨텍스트 첨부, 변경 승인
   </Card>
 </CardGroup>
 
@@ -35,32 +35,56 @@ CodePilot IDE는 개발자가 일하는 화면 안에서 **질문 → 구현 →
 ## 어떤 문제를 해결하나요?
 
 ### 반복적인 작업으로 인한 시간 낭비
-* 기능 구현 전 요구사항 정리 및 설계 시간
-* 유사 코드 작성, 리팩터링, 테스트 케이스 작성 반복
-* 오류 원인 파악과 수정 재시도에 뺏기는 집중 시간
+
+- 기능 구현 전 요구사항 정리 및 설계 시간
+- 유사 코드 작성, 리팩터링, 테스트 케이스 작성 반복
+- 오류 원인 파악과 수정 재시도에 뺏기는 집중 시간
 
 ### 팀마다 제각각인 개발 방식
-* 팀원별 코드 스타일 차이로 인한 리뷰 비용 증가
-* 동일 기능 중복 구현 및 유지보수 난이도 상승
-* 보안 정책이나 금지 패턴이 개인 습관에 따라 누락됨
+
+- 팀원별 코드 스타일 차이로 인한 리뷰 비용 증가
+- 동일 기능 중복 구현 및 유지보수 난이도 상승
+- 보안 정책이나 금지 패턴이 개인 습관에 따라 누락됨
 
 <Tip>
 **CodePilot의 해결책**
 
-CodePilot IDE는 **"개인 생산성"**과 **"팀 표준 준수"**를 동시에 달성하여,
-개발자는 핵심 로직에만 집중하고 나머지는 AI와 시스템이 처리하도록 돕습니다.
+CodePilot은 **"개인 생산성"**과 **"팀 표준 준수"**를 동시에 달성하여, 개발자는 핵심 로직에만 집중하고 나머지는 AI와 시스템이 처리하도록 돕습니다.
 </Tip>
 
 ---
 
 ## 구성 요소
 
-### CodePilot IDE (VS Code 확장)
-개발자가 직접 사용하는 AI 코딩 어시스턴트. VS Code 안에서 채팅, 파일 수정, 명령 실행, 코드 자동완성까지 제공합니다.
+<CardGroup cols={3}>
+  <Card title="CodePilot IDE" icon="code" href="/getting-started/install">
+    **VS Code 확장**
 
-### CodePilot Admin (웹 관리 콘솔)
-조직 관리자가 AI 모델 정책, 보안 규칙, 코딩 컨벤션, 사용량 모니터링을 통합 관리하는 대시보드입니다.
+    개발자가 직접 사용하는 AI 코딩 어시스턴트. 채팅, 파일 수정, 명령 실행, 코드 자동완성을 제공합니다.
+  </Card>
+  <Card title="CodePilot CLI" icon="terminal" href="/cli/getting-started">
+    **터미널 도구**
 
-<Card title="CodePilot Admin 소개" icon="shield-halved" href="/admin/overview">
-  조직 단위 AI 개발 환경 통제 및 모니터링
-</Card>
+    터미널에서 같은 AI 엔진을 사용합니다. CI 파이프라인 등 자동화 환경에도 연결할 수 있습니다.
+  </Card>
+  <Card title="CodePilot Admin" icon="shield-halved" href="/admin/overview">
+    **웹 관리 콘솔**
+
+    조직 관리자가 AI 모델 정책, 보안 규칙, 코딩 컨벤션, 사용량을 통합 관리합니다.
+  </Card>
+</CardGroup>
+
+---
+
+## 조직 단위로 쓰면 달라지는 것
+
+관리자가 Admin 콘솔에서 정책을 설정하면, 조직에 연결된 모든 IDE와 CLI에 자동으로 적용됩니다.
+
+| 관리자가 정하는 것 | 개발자가 얻는 것 |
+|-------------------|----------------|
+| 사용 가능한 AI 모델 | 검증된 모델만 안전하게 사용 |
+| 보안 규칙 | 위험 명령·민감 파일 자동 차단 |
+| 코딩 컨벤션 | 팀 표준에 맞는 코드 자동 생성 |
+| 사내 문서(RAG) | 우리 회사 맥락을 아는 답변 |
+
+정책은 **필수**와 **권장** 두 가지 강도로 배포됩니다. 필수 항목은 개발자가 끌 수 없고, 권장 항목은 기본값으로 적용되되 필요 시 바꿀 수 있습니다.

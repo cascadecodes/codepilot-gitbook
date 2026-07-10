@@ -1,0 +1,137 @@
+---
+title: Commands and Context
+description: Attach context with @ mentions and run common tasks with / slash commands.
+---
+
+## @ Mentions — Attaching Context
+
+Type **`@`** in the input box to bring up a menu for choosing the context to pass to the AI.
+
+![@ menu](/images/IDE_CHAT_AT.png)
+
+| Item | Description |
+|------|------|
+| **Files** | Select project files to include in the context |
+| **Terminal** | Reference recent terminal history and output |
+| **Diagnostics** | Reference the current list of errors and warnings |
+| **Agents** | Invoke a registered subagent |
+
+```
+@src/api/auth.ts Improve the token expiration handling logic in this file.
+```
+
+### Invoking a subagent
+
+An agent registered for a specific role can be called directly with **`@agent-name`**.
+
+```
+@security-reviewer Review the authentication code I just added.
+```
+
+You can register agents yourself on the Settings → **Agents** tab, or an Organization administrator can deploy them company-wide.
+
+<Tip>
+If you drag to select code in the editor and then send a chat, the selected region is automatically attached to the context.
+</Tip>
+
+---
+
+## / Slash Commands
+
+Type **`/`** in the input box to bring up the command menu.
+
+![Slash command menu](/images/IDE_CHAT_SLASH.png)
+
+### Basics
+
+| Command | Description |
+|--------|------|
+| `/clear` | Reset the conversation |
+| `/init` | Analyze the project and auto-generate `AGENTS.md` |
+| `/memory` | Add or remove long-term memory |
+| `/compact` | Compact the conversation to save tokens |
+
+### Development Workflow
+
+| Command | Description |
+|--------|------|
+| `/commit` | Commit changes |
+| `/commit-push-pr` | Commit → push → create a PR in one step |
+| `/review` | Have the AI review the current branch's changes |
+| `/pr-comments` | Pull in PR review comments and apply them |
+| `/autofix-pr` | Analyze CI failure logs and fix automatically |
+| `/security-review` | Review changes for security vulnerabilities |
+
+### Git
+
+| Command | Description |
+|--------|------|
+| `/git status` | Current Git status |
+| `/git diff` | View changes |
+| `/git log` | Recent commit history |
+| `/git branch` | List branches |
+| `/git stash` | Temporarily stash your work |
+
+### Sessions
+
+| Command | Description |
+|--------|------|
+| `/sessions` | List saved sessions |
+| `/restore-session` | Restore a previous session |
+| `/export` | Export the conversation |
+| `/rewind` | Rewind to a specific turn |
+| `/fork` | Branch the conversation from a specific turn |
+
+### Settings and Tools
+
+| Command | Description |
+|--------|------|
+| `/mcp` | List, connect, and disconnect MCP servers |
+| `/agents` | Manage registered agents |
+| `/skills` | Manage skills and rules |
+| `/hooks` | Manage hooks |
+| `/cache` | Check and clear the context cache |
+
+---
+
+## Input Box Tools
+
+The buttons below the input box let you enable options that apply only to the current message.
+
+{/* SCREENSHOT: Toolbar at the bottom of the chat input box — showing the web search toggle, Thinking toggle, and image/PDF attachment button */}
+![Input box tools](/images/IDE_INPUT_TOOLBAR.png)
+
+| Tool | Description |
+|------|------|
+| **Web search** | Searches the web while generating the answer to reflect up-to-date information |
+| **Thinking** | Directs the AI to reason more deeply (useful for complex problems) |
+| **Image/PDF attachment** | Send a screen capture or document along with your message |
+
+---
+
+## Using It Directly in the Editor
+
+Drag to select code and press the **right mouse button** to bring up the CodePilot menu.
+
+{/* SCREENSHOT: The CodePilot context menu that appears when you select a code block in the editor and right-click */}
+![Editor context menu](/images/IDE_EDITOR_CONTEXT_MENU.png)
+
+| Menu | Description |
+|------|------|
+| **Chat with Selection** | Start a chat with the selected code attached |
+| **Explain Code** | Explain the selected code |
+| **Fix Code** | Find and fix problems |
+| **Refactor Code** | Suggest refactoring |
+| **Add Tests** | Generate test code |
+| **Add Documentation** | Add comments and documentation |
+
+---
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|--------|------|
+| `Ctrl+Enter` (macOS: `Cmd+Enter`) | Apply all changes |
+| `Ctrl+Backspace` (macOS: `Cmd+Backspace`) | Undo all changes |
+| `Tab` | Accept the inline code completion |
+| `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) | Run CodePilot commands from the command palette |

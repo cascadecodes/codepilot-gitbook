@@ -1,0 +1,96 @@
+---
+title: Admin Overview
+description: The control tower for your company's AI development environment.
+---
+
+## In one line
+
+> **"The control tower for your company's AI development environment"**
+
+CodePilot Admin is a unified management console that helps your organization run AI development tools **safely and consistently**. It turns the AI that each developer uses in their own way into a **"team asset that meets company standards."**
+
+![Admin dashboard](/images/ADMIN_DASHBOARD.png)
+
+---
+
+## Why do you need Admin?
+
+| Problem | How Admin solves it |
+| :--- | :--- |
+| **Inconsistent quality** — every team uses different models and prompts, so results vary | Ensure consistency by **deploying standard policies** |
+| **Security gaps** — individuals connect unvetted external tools without oversight | **Centrally control the allowed tools and commands** |
+| **Cost management** — no visibility into who uses how much, making costs unpredictable | Understand costs with **usage monitoring** |
+
+<Info>
+By bringing **policy management, operational monitoring, and access control** together in one place, CodePilot Admin gives enterprises the foundation to adopt AI organization-wide with confidence.
+</Info>
+
+---
+
+## Who uses it?
+
+Only users with **administrator privileges** can access the Admin console. Regular members never enter the console; instead, they join from the IDE or CLI with an organization API key and have policies applied to them.
+
+| Role | Permissions |
+|------|------|
+| **Owner** | Highest authority in the organization. Assigns admins and transfers ownership |
+| **Admin** | Manages all settings and users |
+| **Member** | Writes code and uses AI features (no console access) |
+
+---
+
+## Getting started
+
+<Steps>
+  <Step title="Sign in or sign up">
+    Access the console with an administrator account.
+  </Step>
+  <Step title="Create an organization">
+    When you create a new organization, you automatically receive administrator privileges.
+  </Step>
+  <Step title="Issue an API key">
+    Issue the API key that members will use to join the organization from the IDE.
+  </Step>
+  <Step title="Configure policies">
+    Register your AI models, security rules, and coding conventions.
+  </Step>
+</Steps>
+
+<Card title="Sign in and register an organization" icon="right-to-bracket" href="/en/admin/sign-in">
+  From accessing the console to creating an organization and inviting members
+</Card>
+
+---
+
+## Main menus
+
+| Group | Menu | What it does |
+|------|------|--------|
+| **AI features** | AI Models | Register and approve the models the organization uses |
+| | MCP Servers | Manage external tool integrations |
+| | RAG | Upload and index internal documents |
+| | Skills | Register coding conventions and development rules |
+| | Build/Test | Commands that automatically verify generated code |
+| | Hot Load | Run commands automatically based on keywords |
+| | Hooks | Attach shell commands to your workflow |
+| | Agents | Deploy organization-wide shared subagents |
+| **Security** | Security Rules | Block risky commands and protect sensitive files |
+| | Exclude Patterns | Paths to exclude from indexing and search |
+| **Management** | Team | Manage member roles and permissions |
+| | Usage | Token usage and request activity |
+| | API Keys | Issue keys for joining the organization |
+| **Logs** | Access Logs | Sign-in and key activity history |
+| | Error Logs | View system errors and warnings |
+
+---
+
+## Team default vs. Project
+
+Settings are organized into two levels: **Team default** and **Project**.
+
+- **Team default** — common settings applied across the entire organization
+- **Project** — settings that apply only to a specific project; anything not set is inherited from the Team default
+
+<Card title="Project management" icon="folder" href="/en/admin/projects">
+  Creating, switching, and managing members for projects
+</Card>

@@ -1,0 +1,90 @@
+---
+title: Introducing CodePilot
+description: Not just a chatbot that answers questions. A colleague that works alongside you.
+---
+
+## One-line introduction
+
+> **"Not just a chatbot that answers questions. A colleague that works alongside you."**
+
+CodePilot is an **AI-powered work partner** that stays with you across the entire flow — **ask → build → verify → fix** — right inside the screen where developers work.
+
+![CodePilot IDE main screen](/images/IDE_MAIN.png)
+
+---
+
+## Get started right away
+
+<CardGroup cols={2}>
+  <Card title="Install" icon="download" href="/en/getting-started/install">
+    Install from a VSIX file through the VS Code Extensions panel
+  </Card>
+  <Card title="Sign in" icon="right-to-bracket" href="/en/getting-started/sign-in">
+    Social login, username/password, or license key
+  </Card>
+  <Card title="Connect to an organization" icon="building" href="/en/getting-started/organization">
+    Apply your team's policies with an organization API key
+  </Card>
+  <Card title="Quickstart" icon="rocket" href="/en/getting-started/quickstart">
+    Your first request, attaching context, approving changes
+  </Card>
+</CardGroup>
+
+---
+
+## What problems does it solve?
+
+### Time lost to repetitive work
+
+- Time spent organizing requirements and designing before building a feature
+- Repeatedly writing boilerplate code, refactoring, and authoring test cases
+- Focus drained by tracking down the cause of errors and retrying fixes
+
+### Development practices that differ from team to team
+
+- Higher review costs caused by inconsistent code styles across team members
+- Duplicate implementations of the same feature and harder maintenance
+- Security policies and forbidden patterns getting missed depending on individual habits
+
+<Tip>
+**How CodePilot solves this**
+
+CodePilot delivers **"individual productivity"** and **"adherence to team standards"** at the same time, so developers can focus solely on core logic while AI and the system handle the rest.
+</Tip>
+
+---
+
+## Components
+
+<CardGroup cols={3}>
+  <Card title="CodePilot IDE" icon="code" href="/en/getting-started/install">
+    **VS Code extension**
+
+    The AI coding assistant developers use directly. It provides chat, file editing, command execution, and inline code completion.
+  </Card>
+  <Card title="CodePilot CLI" icon="terminal" href="/en/cli/getting-started">
+    **Terminal tool**
+
+    Use the same AI engine from your terminal. It can also connect to automated environments such as CI pipelines.
+  </Card>
+  <Card title="CodePilot Admin" icon="shield-halved" href="/en/admin/overview">
+    **Web admin console**
+
+    Organization administrators centrally manage AI model policies, security rules, coding conventions, and usage.
+  </Card>
+</CardGroup>
+
+---
+
+## What changes when you use it across an organization
+
+When an administrator configures policies in the Admin console, they are automatically applied to every IDE and CLI connected to the organization.
+
+| What the administrator decides | What the developer gets |
+|-------------------|----------------|
+| Which AI models are available | Only vetted models, used safely |
+| Security rules | Automatic blocking of risky commands and sensitive files |
+| Coding conventions | Code automatically generated to match team standards |
+| Internal documents (RAG) | Answers that understand your company's context |
+
+Policies are distributed at two levels of strength: **Required** and **Recommended**. Required items cannot be turned off by developers, while Recommended items are applied as defaults but can be changed when needed.

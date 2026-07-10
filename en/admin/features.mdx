@@ -1,0 +1,199 @@
+---
+title: Policy Configuration
+description: Learn how to register AI models, tool integrations, internal knowledge, development rules, and security policies.
+---
+
+Every settings page works the same way.
+
+- Register items with the **Add** button; each item can be **edited or deleted**.
+- Each page comes with **recommended presets** that you can apply instantly with a single click.
+- For each item you set a **Required / Recommended** enforcement level. For details, see the [Policy operations guide](/en/admin/policies).
+
+---
+
+## AI Models
+
+![AI model settings](/images/ADMIN_AI_MODEL.png)
+
+Register and approve the AI models your organization is allowed to use.
+
+| Category | Description |
+|------|------|
+| **Built-in models** | Integrates with the local model server. Just toggle it on or off |
+| **Supported models** | A catalog of models from major providers. Enable them individually or by group |
+| **Custom models** | Models you register yourself (specify the endpoint, authentication method, and parameters) |
+
+Supported integration types include official APIs, open-model APIs, cloud providers (Vertex AI · Azure OpenAI · AWS Bedrock), and self-hosted servers (OpenAI-compatible endpoints).
+
+<Tip>
+**Model whitelist** — Only the models approved by your organization appear in the model picker in the IDE. This lets you run a model strategy driven by **company cost and security standards** rather than individual preference.
+</Tip>
+
+---
+
+## MCP Servers
+
+![MCP settings](/images/ADMIN_MCP.png)
+
+Restrict integrations to only the external tools your organization has approved, such as GitHub and Jira.
+
+- Register a server name and URL, and it is automatically deployed to every IDE in the organization.
+- Authentication supports API keys or OAuth.
+- Use **Test connection** and **Fetch tool list** to verify that everything works correctly.
+
+<Tip>
+Preserve extensibility while **preventing data leaks** caused by connecting unvetted external tools.
+</Tip>
+
+---
+
+## RAG (Internal Knowledge)
+
+![RAG settings](/images/ADMIN_RAG.png)
+
+Upload your internal wiki, API documentation, and policy documents, and the AI references them when answering.
+
+| Action | Description |
+|------|------|
+| Create a RAG source | Upload documents along with a name and description |
+| Add documents | Upload more documents to an existing source |
+| Reindexing | Refresh the search index after documents change |
+| Search settings | Adjust the similarity threshold and the number of search results |
+
+Supported formats: `.txt` `.md` `.pdf` `.docx` `.json` `.csv`
+
+<Tip>
+By referencing shared team documents, the AI provides answers that **"understand your company's context."**
+</Tip>
+
+---
+
+## Skills (Development Rules)
+
+![Skills settings](/images/ADMIN_SKILLS.png)
+
+Register the team rules the AI must follow when writing code, in Markdown.
+
+```
+- Use camelCase for variable names
+- Default JPA entities to FetchType.LAZY
+- Wrap API responses in a Result wrapper object
+```
+
+Categories are divided into version control, coding style, project architecture, dependency policy, DB, and custom.
+
+| Type | How it applies |
+|------|----------|
+| **Rule** | Always included in the AI prompt |
+| **Skill** | Loaded and used only when needed |
+
+<Tip>
+Developers don't have to memorize every rule; the AI **adheres to team standards** at the generation stage.
+</Tip>
+
+---
+
+## Build/Test Settings
+
+![Build/Test settings](/images/ADMIN_BUILD.png)
+
+Register the validation and formatter commands to run automatically after code generation. You can specify different commands per language.
+
+```
+Validation: tsc --noEmit
+Formatter:  prettier --write .
+```
+
+If validation fails, the AI analyzes the error and attempts to fix it on its own.
+
+---
+
+## Hot Load
+
+![Hot Load settings](/images/ADMIN_HOTLOAD.png)
+
+Register keywords, and when a team member types a sentence containing one of them in chat, a predefined command runs automatically.
+
+| Item | Description |
+|------|------|
+| Trigger keywords | Register multiple keywords separated by commas |
+| Command | The shell command to run |
+| Completion condition | Exit code, whether the output contains a given string, or whether a file exists |
+| Retries | Number of retries on failure |
+| On failure | Stop, or pass the error to the AI to attempt a fix |
+
+<Tip>
+Turn your team's repetitive-task know-how into **automation rules as reusable assets**.
+</Tip>
+
+---
+
+## Hooks
+
+Attach shell commands to specific points in the workflow. Use them for audit logging or integrating with internal systems.
+
+{/* SCREENSHOT: Admin Hooks page — list of registered hooks and the input form for event/command/tool matching/timeout */}
+![Hooks settings](/images/ADMIN_HOOKS.png)
+
+| Event | When it fires |
+|--------|------|
+| Before tool execution | Just before the AI runs a tool |
+| After tool execution | After a tool finishes running |
+| On tool failure | When a tool execution fails |
+| Before LLM call | Just before a request is sent to the AI |
+| On session start | When a new conversation begins |
+
+You can set matching conditions so a hook responds only to specific tools, and configure synchronous/asynchronous execution and timeouts.
+
+---
+
+## Agents
+
+Register subagents to deploy across the entire company. Team members invoke them with **`@agentname`** in the IDE chat.
+
+{/* SCREENSHOT: Admin Agents page — list of registered agents (@name, number of allowed tools, read-only status) and the input form */}
+![Agents settings](/images/ADMIN_AGENTS.png)
+
+| Item | Description |
+|------|------|
+| Name | The invocation name that follows `@` |
+| Description | What this agent does |
+| System prompt | Its role and instructions |
+| Allowed tools | The range of tools it can use |
+| Read-only | Blocks file modification and deletion tools |
+
+<Tip>
+By deploying agents with dedicated roles—such as "security reviewer" or "test writer"—everyone on the team receives **reviews held to the same standard**.
+</Tip>
+
+---
+
+## Security Rules
+
+![Security rules settings](/images/ADMIN_SECURITY.png)
+
+Block the execution of dangerous commands and access to sensitive files.
+
+| Type | Description | Example |
+|------|------|------|
+| **Blocked commands** | Commands the AI cannot run | `rm -rf /` |
+| **Protected files** | Files whose reading and modification is prevented | `.env*`, `credentials.json` |
+| **Hidden files** | Files hidden so the AI cannot even know they exist | `config/production.json` |
+
+---
+
+## Exclude Patterns
+
+![Exclude patterns settings](/images/ADMIN_PATTERN.png)
+
+Register the paths to exclude from project indexing, file search, and context collection as glob patterns. `.gitignore` is applied automatically.
+
+```
+.env*
+node_modules/
+dist/
+```
+
+<Tip>
+Put **safeguards in place at the system level** without friction between the security and development teams.
+</Tip>

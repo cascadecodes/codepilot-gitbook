@@ -1,0 +1,88 @@
+---
+title: Installation
+description: Install the CodePilot VSIX file through the VS Code Extensions panel.
+---
+
+CodePilot IDE runs as a VS Code extension. It is distributed as a **`.vsix` installation file** rather than through the Marketplace, and you install it directly from the VS Code Extensions panel.
+
+## Requirements
+
+| Item | Requirement |
+|------|----------|
+| VS Code | 1.85 or later |
+| Installation file | `codepilot-<version>.vsix` (provided by your contact or organization administrator) |
+| Account | A sign-in account or an organization API key |
+
+<Info>
+Windows, macOS, and Linux are all supported. The installation file is identical across all operating systems.
+</Info>
+
+---
+
+## Installing
+
+<Steps>
+  <Step title="Open the Extensions panel">
+    In the VS Code activity bar on the left, click the **Extensions** icon.
+
+    Shortcut: `Ctrl+Shift+X` (macOS: `Cmd+Shift+X`)
+  </Step>
+
+  <Step title="Choose Install from VSIX">
+    Click the **`···` (More Actions)** button at the top right of the Extensions panel, then select **Install from VSIX...** from the menu.
+
+    {/* SCREENSHOT: The Extensions panel with the top-right ··· menu expanded, showing the "Install from VSIX..." item */}
+    ![Selecting Install from VSIX in the Extensions panel](/images/IDE_INSTALL_EXT_PANEL.png)
+  </Step>
+
+  <Step title="Select the file">
+    When the file browser opens, select the `codepilot-<version>.vsix` file you received.
+
+    ![Selecting the VSIX file](/images/IDE_INSTALL.png)
+  </Step>
+
+  <Step title="Restart VS Code">
+    When installation finishes, a restart prompt appears in the bottom right. Click **Restart Extensions** or **Restart**.
+
+    After restarting, the **CodePilot icon** is added to the activity bar.
+  </Step>
+</Steps>
+
+<Tip>
+If you prefer the Command Palette, press `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) and type **Extensions: Install from VSIX...** to reach the same screen.
+
+![Command Palette](/images/IDE_OPEN_SETTING.png)
+</Tip>
+
+---
+
+## Verifying the installation
+
+Click the **CodePilot icon** in the activity bar to open the chat panel.
+
+![CodePilot chat panel](/images/IDE_MAIN.png)
+
+On first launch, the sign-in screen appears first. If you haven't signed in yet, continue to the next step.
+
+---
+
+## Updating
+
+Get the new version's `.vsix` file and **install it again the same way** to overwrite the existing version. Your settings and conversation history are preserved.
+
+<Warning>
+If the chat panel is empty after installation or the icon doesn't appear, quit VS Code completely and relaunch it.
+</Warning>
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Sign in" icon="right-to-bracket" href="/en/getting-started/sign-in">
+    Sign in with your account and activate the IDE
+  </Card>
+  <Card title="Connect to an organization" icon="building" href="/en/getting-started/organization">
+    Join an organization and select a project
+  </Card>
+</CardGroup>

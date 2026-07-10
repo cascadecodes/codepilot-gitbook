@@ -1,0 +1,149 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "CodePilot",
+  "favicon": "/images/logo.png",
+  "logo": {
+    "dark": "/images/LOGO_DARK.jpg",
+    "light": "/images/logo.png"
+  },
+  "colors": {
+    "primary": "#1D4ED8",
+    "light": "#3B82F6",
+    "dark": "#1E40AF"
+  },
+  "navigation": {
+    "languages": [
+      {
+        "language": "ko",
+        "default": true,
+        "tabs": [
+          {
+            "tab": "소개",
+            "groups": [
+              {
+                "group": "소개",
+                "pages": ["introduction"]
+              },
+              {
+                "group": "시작하기",
+                "pages": [
+                  "getting-started/install",
+                  "getting-started/sign-in",
+                  "getting-started/organization",
+                  "getting-started/quickstart"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "IDE",
+            "groups": [
+              {
+                "group": "가이드",
+                "pages": [
+                  "ide/chat-modes",
+                  "ide/commands",
+                  "ide/features",
+                  "ide/settings",
+                  "ide/use-cases"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "CLI",
+            "groups": [
+              {
+                "group": "CLI",
+                "pages": ["cli/getting-started", "cli/commands"]
+              }
+            ]
+          },
+          {
+            "tab": "Admin",
+            "groups": [
+              {
+                "group": "Admin 콘솔",
+                "pages": [
+                  "admin/overview",
+                  "admin/sign-in",
+                  "admin/projects",
+                  "admin/features",
+                  "admin/policies",
+                  "admin/monitoring"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "Overview",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": ["en/introduction"]
+              },
+              {
+                "group": "Getting started",
+                "pages": [
+                  "en/getting-started/install",
+                  "en/getting-started/sign-in",
+                  "en/getting-started/organization",
+                  "en/getting-started/quickstart"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "IDE",
+            "groups": [
+              {
+                "group": "Guides",
+                "pages": [
+                  "en/ide/chat-modes",
+                  "en/ide/commands",
+                  "en/ide/features",
+                  "en/ide/settings",
+                  "en/ide/use-cases"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "CLI",
+            "groups": [
+              {
+                "group": "CLI",
+                "pages": ["en/cli/getting-started", "en/cli/commands"]
+              }
+            ]
+          },
+          {
+            "tab": "Admin",
+            "groups": [
+              {
+                "group": "Admin console",
+                "pages": [
+                  "en/admin/overview",
+                  "en/admin/sign-in",
+                  "en/admin/projects",
+                  "en/admin/features",
+                  "en/admin/policies",
+                  "en/admin/monitoring"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {}
+  }
+}

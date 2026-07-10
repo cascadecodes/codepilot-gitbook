@@ -1,0 +1,297 @@
+---
+title: Settings
+description: Explains each tab of the CodePilot IDE settings screen so that even first-time users can understand it.
+---
+
+Click the **gear (⚙) icon** at the top right of the chat panel to open the settings screen.
+
+![Settings screen](/images/IDE_SETTING.png)
+
+<Info>
+When connected to an Organization, items the administrator has deployed as **Required** cannot be changed. These are the items marked with a lock icon.
+</Info>
+
+---
+
+## Account
+
+![Account settings](/images/IDE_ACCOUNT.png)
+
+This screen shows your login status and the Organization you belong to, and handles joining an Organization and selecting a Project.
+
+| Item | Description |
+|------|------|
+| Profile | Login account, Organization membership, authentication status |
+| Organization connection | Register an Organization API key (`cpk_...`) and leave the Organization |
+| Project | Select the Project to work on |
+| Sync organization settings | Re-fetch the latest policies from the server |
+
+For detailed steps, see the [Organization connection](/en/getting-started/organization) doc.
+
+---
+
+## General
+
+![General settings](/images/IDE_GENERAL.png)
+
+### Language / Theme / Default Mode
+
+| Item | Description |
+|------|------|
+| Language | AI response language (Korean / English) |
+| Theme | Dark / Light / Follow VS Code setting |
+| Default Mode | The mode selected when a chat starts |
+
+### Auto-execution permissions
+
+Determines whether the AI **asks for confirmation or runs immediately** before it modifies files or executes commands.
+
+| Setting | When ON | When OFF |
+|------|---------|---------|
+| Auto-run tools | The AI runs tools immediately | Asks for approval before running |
+| Auto-update files | Applies changes immediately | Approve after reviewing the diff |
+| Auto-run commands | Runs terminal commands immediately | Confirm before running |
+
+<Warning>
+If you're using it for the first time, start with **Auto-run tools and Auto-run commands turned OFF**. We recommend turning them on only after you've built trust by observing what the AI does.
+</Warning>
+
+### Other
+
+- **Inline code completion** — Tab completion while typing (OFF by default)
+- **Next-task suggestions** — Suggests follow-up tasks after a task completes
+- **Web search** — Reflects web search results in answers
+- **Credential protection** — Inspects responses so that secret keys aren't exposed
+- **Export / import settings** — Back up and restore settings as a JSON file
+
+---
+
+## AI Models
+
+![AI Models settings](/images/IDE_AI_MODEL.png)
+
+### Selecting the main model
+
+Choose the default model to use for chat.
+
+| Type | Characteristics |
+|------|------|
+| Cloud model | High performance, requires internet, incurs cost |
+| Local model | Free, works offline, speed varies with your PC's specs |
+
+<Tip>
+When connected to an Organization, only models approved by the administrator appear in the list.
+</Tip>
+
+### Response options
+
+| Option | Description |
+|------|------|
+| Streaming | Displays the answer as it's generated |
+| Thinking | Reason more deeply (Low / Medium / High / Max) |
+| Multimodal | Supports image and PDF attachments |
+
+### Registering a personal API key
+
+Besides the Organization's models, you can register a personal API key and use it at your own expense. Enter the key issued by the provider on this screen.
+
+### Assigning models by purpose
+
+You can assign a different model to each type of task. Assigning a lightweight model to simple tasks improves both cost and response speed.
+
+| Purpose | Recommended |
+|------|------|
+| Conversation compaction | Lightweight model |
+| Command execution | Main model |
+| Intent analysis | Lightweight model |
+| Error recovery | A model different from the main model |
+| Inline code completion | Lightweight local model |
+
+---
+
+## MCP Servers
+
+![MCP Servers settings](/images/IDE_MCP.png)
+
+Connect external tools such as GitHub, Jira, and in-house systems so the AI can operate them directly.
+
+- **Local connection** — Tools that run on your own PC
+- **Remote connection** — An external MCP server URL
+
+Authentication supports API keys or OAuth.
+
+<Info>
+If your Organization administrator pre-registers MCP servers, you can use them right away with no additional setup.
+</Info>
+
+---
+
+## RAG (Internal Documents)
+
+![RAG settings](/images/IDE_RAG.png)
+
+View the list of internal documents the administrator registered in the CodePilot Admin console. During chat, relevant documents are automatically searched and reflected in answers.
+
+Since document registration and indexing are performed by the administrator, in the IDE you only view which documents are connected.
+
+---
+
+## Build/Test
+
+![Build/Test settings](/images/IDE_BUILD.png)
+
+Specify the verification commands to run automatically after writing or fixing code.
+
+| Project | Example commands |
+|---------|-----------|
+| Node.js | `npm test`, `npm run lint`, `npm run build` |
+| Python | `pytest` |
+| Java (Maven) | `mvn verify` |
+| Java (Gradle) | `./gradlew test` |
+
+If left empty, the project type is detected and commands are chosen automatically. If verification fails, the AI analyzes the cause, applies a fix, and verifies again.
+
+---
+
+## Hot Load
+
+![Hot Load settings](/images/IDE_HOTLOAD.png)
+
+Register frequently used tasks as keywords, and when you type a sentence containing that keyword in the chat, the registered command runs.
+
+```
+Keyword:      deploy, release
+Description:  Run a production deployment
+Command:      ./scripts/deploy.sh production
+```
+
+You can also specify a completion condition (exit code, output string, or file existence), the number of retries, and the behavior on failure.
+
+---
+
+## Hooks
+
+Insert shell commands at specific points in the workflow. Use them for audit logging, integration with in-house tools, and more.
+
+{/* SCREENSHOT: Settings > Hooks tab — the list of registered hooks and the event/command/timeout input form */}
+![Hooks settings](/images/IDE_HOOKS.png)
+
+| Event | When it fires |
+|--------|------|
+| Before tool execution | Just before the AI runs a tool |
+| After tool execution | After a tool finishes running |
+| On tool failure | When a tool execution fails |
+| Before LLM call | Just before a request is sent to the AI |
+| On session start | When a new conversation starts |
+
+---
+
+## Agents
+
+Register subagents that take on specific roles. Once registered, you can invoke them in chat with **`@agent-name`**.
+
+{/* SCREENSHOT: Settings > Agents tab — the list of registered agents and the name/description/system prompt/allowed tools input form */}
+![Agents settings](/images/IDE_AGENTS.png)
+
+| Item | Description |
+|------|------|
+| Name | The call name that follows `@` |
+| Description | What this agent does |
+| System prompt | The agent's role and instructions |
+| Allowed tools | The tools this agent can use |
+| Read-only | Blocks file modification and deletion tools |
+
+<Info>
+Your Organization administrator can also deploy company-wide shared agents.
+</Info>
+
+---
+
+## Skills (Skills and Rules)
+
+![Skills settings](/images/IDE_SKILLS.png)
+
+Register, in Markdown, the team rules the AI must follow when writing code.
+
+```
+Write all React components as function components,
+and define Props types using an interface.
+```
+
+The categories are divided into Global Rules, Version Control, Coding Style, Project Architecture, Dependency Policy, and Database.
+
+| Type | Description |
+|------|------|
+| Local rules | Applied only on your own PC |
+| Organization rules | Registered by the administrator and applied to all team members |
+
+<Info>
+**Required** items among the Organization rules cannot be modified or turned off by individuals.
+</Info>
+
+---
+
+## Security
+
+![Security settings](/images/IDE_SCRURITY.png)
+
+Specify the commands the AI must not run and the files it must not access.
+
+### Blocked commands
+
+Blocks commands that destroy the system or are irreversible.
+
+```
+rm -rf /
+DROP TABLE
+git push --force
+chmod 777
+```
+
+### Protected files / exclude patterns
+
+Specify the paths the AI is blocked from reading or modifying.
+
+```
+.env              ← API keys, passwords
+.env.local
+secrets/          ← certificates, secret keys
+config/secrets.yml
+```
+
+<Info>
+Paths listed in `.gitignore` are automatically skipped during file exploration. To block them completely, however, add them directly to the exclude patterns.
+</Info>
+
+<Warning>
+Security settings are the last line of defense that prevents the AI from accidentally touching important files. Be sure to add your `.env` file to the exclude patterns.
+</Warning>
+
+---
+
+## Usage
+
+View the memory used, the number of AI calls, the number of tool executions, and the number of files referenced in the current session.
+
+---
+
+## Per-Project Settings
+
+When you select a Project, the **Team default settings** are also shown, read-only, on the settings screen. For any item the Project doesn't set separately, the Team default settings apply as-is.
+
+![Project security settings](/images/IDE_PROJECT_SECURITY.png)
+
+<AccordionGroup>
+  <Accordion title="What happens if I don't select a Project?">
+    The Team default settings apply. The Organization-wide settings registered by the administrator are used as-is.
+  </Accordion>
+  <Accordion title="My Project list is empty">
+    This means the administrator hasn't created any Projects yet, or you haven't been added as a member of the Project. Contact your administrator.
+  </Accordion>
+  <Accordion title="Does changing Projects clear my conversation?">
+    No. Your conversation is preserved, and the new Project's settings apply from the next message onward.
+  </Accordion>
+  <Accordion title="What if local rules and Organization rules conflict?">
+    Organization rules take precedence. Use local rules to complement the Organization rules.
+  </Accordion>
+</AccordionGroup>

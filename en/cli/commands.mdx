@@ -1,0 +1,186 @@
+---
+title: CLI Commands
+description: A reference for the CodePilot CLI's slash commands and automated execution.
+---
+
+## Switching modes
+
+The CLI supports the same four modes as the IDE.
+
+```bash
+/mode           # Open the selection menu
+/mode agent     # Switch immediately
+```
+
+| Mode | File changes | Purpose |
+|------|:--------:|------|
+| `code` | O | Carries out the instructed task directly |
+| `agent` | O | Give it a goal and it breaks the work down on its own (default) |
+| `ask` | X | Questions and analysis |
+| `plan` | X | Drafts a plan before making changes |
+
+You can also set the starting mode at launch.
+
+```bash
+codepilot --mode plan
+```
+
+---
+
+## Slash commands
+
+Type `/` to bring up an autocomplete list of commands. Select with `Tab` and run with `Enter`.
+
+{/* SCREENSHOT: Slash command autocomplete list shown when typing "/" in the CLI input */}
+![Slash command autocomplete](/images/CLI_SLASH.png)
+
+### Account & Organization
+
+| Command | Description |
+|--------|------|
+| `/login [provider]` | Sign in |
+| `/logout` | Sign out |
+| `/whoami` | Show account, organization, and API key |
+| `/join <cpk_...>` | Join an organization |
+| `/project` | Select a project |
+| `/sync` | Re-fetch organization settings |
+| `/trust` | Trust the current folder |
+
+### Model & Behavior
+
+| Command | Description |
+|--------|------|
+| `/model` | List and change models |
+| `/thinking` | Change the reasoning level (off / low / medium / high) |
+| `/web on\|off` | Toggle web search |
+| `/orchestration on\|off` | Toggle multi-agent orchestration |
+| `/settings` | View and change settings |
+
+### Conversation management
+
+| Command | Description |
+|--------|------|
+| `/clear` | Reset the conversation |
+| `/resume` | Restore a previous session |
+| `/session` | Save, list, delete, or export sessions |
+| `/compact` | Compact the conversation (saves tokens) |
+| `/status` | Usage statistics for this session |
+| `/memory` | Manage long-term memory |
+| `/init` | Analyze the project and write `AGENTS.md` |
+
+### Git & Development workflow
+
+| Command | Description |
+|--------|------|
+| `/diff` | Uncommitted changes |
+| `/pending` | File changes awaiting approval |
+| `/accept [file]` | Apply changes |
+| `/undo [file]` | Revert changes |
+| `/commit "message"` | Commit (use `/commit ai` to auto-generate the message) |
+| `/commit-push-pr` | Commit → push → create PR |
+| `/review [base-branch]` | Review the changes on the current branch |
+| `/pr-comments` | Apply PR review comments |
+| `/autofix-pr` | Analyze CI failure logs and fix automatically |
+| `/security-review` | Review for security vulnerabilities |
+
+### Tools & Rules
+
+| Command | Description |
+|--------|------|
+| `/mcp` | Manage MCP servers |
+| `/agents` | Manage subagents |
+| `/skills` | Manage skills and rules |
+| `/rules` | View and toggle organization rules |
+| `/rag` | Manage internal document sources |
+| `/hooks` | Manage hooks |
+| `/hotload` | Keyword-triggered automation rules |
+| `/buildtest` | Configure build and test commands |
+| `/security` | Manage security rules |
+| `/exclusion` | Context exclusion patterns |
+
+<Tip>
+Type `/help` to see the full list of available commands and shortcuts.
+</Tip>
+
+---
+
+## Attaching files and running shell commands
+
+```bash
+# Attach a file to the context
+@src/api/auth.ts Improve how token expiration is handled
+
+# Call a subagent
+@security-reviewer Review the authentication code I just added
+
+# Run a shell command directly, without the AI
+!git status
+```
+
+The output of a command run with `!` is automatically included in the context of your next message.
+
+Paste the path to an image or PDF file and it is recognized as an attachment.
+
+---
+
+## Automated execution (non-interactive)
+
+With the `-p` option, the CLI runs once without the interactive screen, prints the result, and exits. Use it in CI pipelines or scripts.
+
+```bash
+codepilot -p "Summarize why the tests are currently failing"
+```
+
+{/* SCREENSHOT: Terminal showing the result of codepilot -p "..." printed to standard output */}
+![Non-interactive execution](/images/CLI_HEADLESS.png)
+
+### Key options
+
+| Option | Description |
+|------|------|
+| `-p, --print <prompt>` | Run once and exit |
+| `--json` | Output the result as JSON |
+| `--mode <mode>` | Set the starting mode |
+| `--image <path>` | Attach an image or PDF |
+| `--permission-mode accept\|reject` | Tool execution approval policy |
+| `--yes` | Approve execution even in untrusted folders |
+| `--no-banner` | Skip the startup banner |
+| `--version` | Show the version |
+
+### Piping output
+
+The response goes to standard output and progress goes to standard error, so you can pipe it directly.
+
+```bash
+codepilot -p "Summarize the changes in this commit in one sentence" > summary.txt
+codepilot -p "Why the tests are failing" --json | jq '.text'
+```
+
+<Warning>
+In non-interactive mode, tool execution prompts are approved automatically. When running in CI, block file changes with `--permission-mode reject`, or run in an isolated environment.
+</Warning>
+
+### Using it in CI
+
+Pass a pre-issued token as an environment variable to run without signing in.
+
+```bash
+export CODEPILOT_ACCESS_TOKEN="..."
+export CODEPILOT_BACKEND_URL="https://codepilot.mycompany.com/api/v1"
+
+codepilot -p "Review the changed code for security vulnerabilities" --yes --json
+```
+
+<Warning>
+Manage the token as a CI secret. Take care not to expose it in your repository or logs.
+</Warning>
+
+---
+
+## Project context file
+
+If an **`AGENTS.md`** file exists in the project root, it is automatically included in the context when a conversation starts. Document your project overview, architecture, and coding rules there once, and you won't have to explain them every time.
+
+```bash
+/init    # Analyze the project and generate a draft AGENTS.md
+```

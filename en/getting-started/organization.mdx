@@ -1,0 +1,97 @@
+---
+title: Connect to an organization
+description: Join an organization with an organization API key and select the project you'll work on.
+---
+
+When you connect to an organization, the **AI model policies, security rules, coding conventions, and internal documents (RAG)** your administrator configured in the Admin console are automatically applied to the IDE.
+
+<Info>
+Individual users can use CodePilot without an organization. Connecting to an organization is an optional step for having your team's standards applied.
+</Info>
+
+---
+
+## 1. Get an organization API key
+
+Ask your organization administrator for an **API key that starts with `cpk_`**. The administrator issues this key from the **API Key Management** menu in the Admin console.
+
+<Warning>
+The API key is what proves your eligibility to join the organization. Be careful not to expose it in internal messengers, public repositories, and the like.
+</Warning>
+
+---
+
+## 2. Join the organization from the IDE
+
+<Steps>
+  <Step title="Open Settings">
+    Click the **gear (⚙) icon** at the top right of the chat panel to open the Settings panel.
+  </Step>
+
+  <Step title="Go to the Account tab">
+    Select **Account** from the left menu.
+
+    ![Account tab](/images/IDE_ACCOUNT.png)
+  </Step>
+
+  <Step title="Enter the API key">
+    In the input field under **Connect to an organization**, paste the API key you received (`cpk_...`) and click **Register**.
+
+    {/* SCREENSHOT: The "Connect to an organization" area of the Settings > Account tab — an input field showing the cpk_ placeholder and a Register button */}
+    ![Registering the organization API key](/images/IDE_ACCOUNT_ORG.png)
+  </Step>
+
+  <Step title="Confirm the connection">
+    Once you've joined successfully, the **organization name** appears in your profile area and the organization settings are downloaded automatically.
+  </Step>
+</Steps>
+
+<Tip>
+If the organization settings changed but aren't reflected in the IDE, click the **Sync organization settings** button in the Account tab to fetch the latest policies again.
+</Tip>
+
+---
+
+## 3. Select a project
+
+If your organization has multiple projects, you need to select the one you're working on so that its project-specific settings are applied.
+
+Open the dropdown under the **Project** item in the Account tab and select a project.
+
+![Selecting a project](/images/IDE_PROJECT_SELECT.png)
+
+When you select a project, that project's AI models, security rules, and RAG documents are applied. For any item the project doesn't set separately, the **Team default settings** are followed as-is.
+
+<Info>
+If the dropdown shows **"No registered projects,"** either the administrator hasn't created a project yet or you're not a member of that project. Ask your administrator to add you as a member.
+</Info>
+
+---
+
+## Settings that get applied
+
+Once you're connected to an organization, the following items are applied automatically.
+
+| Item | Description |
+|------|------|
+| **AI models** | Only models approved by the organization can be selected |
+| **Security rules** | Blocking of risky commands and protection of sensitive files |
+| **Coding conventions** | Team rules automatically reflected in AI responses |
+| **Internal documents (RAG)** | AI answers by referencing internal documents |
+| **MCP servers** | Integration with external tools approved by the organization |
+
+Each item is distributed at either **Required** or **Recommended** strength. Required items cannot be changed in the IDE, while Recommended items are applied as defaults but can be changed when needed.
+
+---
+
+## Leaving an organization
+
+Click **Leave** under Settings → Account → Connect to an organization. When you leave, organization policies no longer apply and you return to your personal settings.
+
+---
+
+## Next steps
+
+<Card title="Quickstart" icon="rocket" href="/en/getting-started/quickstart">
+  How to send your first request and approve changes
+</Card>

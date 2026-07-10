@@ -1,0 +1,102 @@
+---
+title: Sign in
+description: How to sign in to CodePilot IDE, broken down by authentication method.
+---
+
+After installation, click the CodePilot icon in the activity bar to bring up the sign-in screen in the chat panel.
+
+![Sign-in screen](/images/IDE_LOGIN.png)
+
+What the sign-in screen looks like depends on the **authentication method** your organization uses. If you're not sure which one applies, ask your organization administrator.
+
+| Authentication method | Sign-in screen | Where it's typically used |
+|----------|------------|--------------|
+| **Social login** | Google · GitHub · Microsoft buttons | Cloud (SaaS) default |
+| **Username/password** | Email · password entry form | On-premises |
+| **License key** | License key registration | Standalone environments used without signing in |
+
+---
+
+## Social login (default)
+
+<Steps>
+  <Step title="Click the sign-in button">
+    Click the **Sign in with Google** button. Depending on your organization's configuration, GitHub and Microsoft buttons may also appear.
+  </Step>
+  <Step title="Authenticate in the browser">
+    Your default browser opens and shows the account authentication screen. Once you complete authentication, you'll see the message **"Signed in — return to VS Code to continue working."**
+  </Step>
+  <Step title="Return to VS Code">
+    Back in VS Code, the sign-in screen disappears and the chat panel becomes active.
+  </Step>
+</Steps>
+
+<Tip>
+If you choose **Sign in with GitHub**, an authentication code is shown instead of opening a browser. The code is copied to your clipboard automatically, so you just paste it into the open GitHub page.
+</Tip>
+
+---
+
+## Username/password sign-in (on-premises)
+
+In on-premises deployments, the sign-in screen shows an email and password entry form.
+
+{/* SCREENSHOT: The on-premises sign-in form in the IDE chat panel — email/password fields and a "Don't have an account? Sign up" link visible */}
+![Username/password sign-in](/images/IDE_LOGIN_LOCAL.png)
+
+- **Sign in** — Enter the email and password you were issued.
+- **Sign up** — If you don't have an account, click **"Don't have an account? Sign up"** and register with your name, email, and password.
+
+<Info>
+If you forget your password, contact your organization administrator. The administrator issues a **temporary password** from the Admin console. Sign in with the temporary password you receive, then change your password.
+</Info>
+
+---
+
+## License key registration (standalone)
+
+In environments that use AI models registered directly without a backend server, you register a **license key** instead of signing in.
+
+{/* SCREENSHOT: The license activation screen in the IDE chat panel — a "License activation" heading and a key-file selection button */}
+![License key registration](/images/IDE_LOGIN_LICENSE.png)
+
+<Steps>
+  <Step title="Open the Command Palette">
+    `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`)
+  </Step>
+  <Step title="Register the license key">
+    Run **CodePilot: Register License Key** and select the license key file you received.
+  </Step>
+  <Step title="Register AI models">
+    In Settings → **AI Models**, register the models and API keys you want to use.
+  </Step>
+</Steps>
+
+---
+
+## Server address configuration
+
+In on-premises environments, you must first specify the server address to connect to. In VS Code Settings (`Ctrl+,`), search for `codepilot` and enter the following items.
+
+| Setting | Description |
+|------|------|
+| **Backend URL** | Your organization's server address |
+| **Auth Mode** | Authentication method (social login / username-password / standalone) |
+
+<Tip>
+Organization administrators often set these values in advance at deployment time. If the sign-in screen appears correctly with the defaults, you don't need to change anything.
+</Tip>
+
+---
+
+## Signing out
+
+Run **CodePilot: Sign Out** from the Command Palette, or click the **Sign out** button in Settings → **Account** tab.
+
+---
+
+## Next steps
+
+<Card title="Connect to an organization" icon="building" href="/en/getting-started/organization">
+  Join an organization to automatically apply the AI models, security rules, and coding conventions your administrator has configured
+</Card>

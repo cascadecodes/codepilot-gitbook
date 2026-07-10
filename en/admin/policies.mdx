@@ -1,0 +1,96 @@
+---
+title: Policy Operations Guide
+description: Learn how to set enforcement levels and roll policies out across your organization in phases.
+---
+
+Policies configured in CodePilot Admin are automatically applied to your team members' CodePilot IDE and CLI. For flexible operation, CodePilot offers policies at **two enforcement levels**.
+
+---
+
+## Enforcement Levels
+
+Every configuration item is assigned a **Required** or **Recommended** enforcement level.
+
+### Required
+
+- **Behavior**: Users cannot change or turn it off in the IDE.
+- **Use for**: Security rules, compliance, prohibited commands
+- **Examples**: "Prohibit specific models," "Block access to `.env` files"
+
+### Recommended
+
+- **Behavior**: Applied as the default, but users can change it when needed.
+- **Use for**: Productivity tool settings, preferred models, coding style
+- **Examples**: "Use Korean for code reviews," "Enable autocomplete"
+
+<Info>
+**Operational tip**
+
+Early in your rollout, start mainly with **Recommended policies** to reduce resistance, then gradually convert essential security items to **Required policies**.
+</Info>
+
+---
+
+## When Policies Take Effect
+
+Once an administrator saves a policy, team members' IDEs fetch the latest policy at the following times:
+
+- When they log in
+- When they switch projects
+- When they run **Sync organization settings** under Settings → Account
+
+<Tip>
+If a policy change doesn't reach a team member right away, tell them to run a sync from the settings screen. Even when the network is down, the last fetched policy remains in effect.
+</Tip>
+
+---
+
+## Real-World Examples
+
+### "For security, only approved models may be used"
+
+- **Admin**: In AI model settings, enable only the approved models and set them to Required
+- **IDE**: Only approved models appear in the model picker
+
+### "We want to prevent dangerous commands from being run by mistake"
+
+- **Admin**: Register the pattern under blocked commands in Security Rules and set it to Required
+- **IDE**: When the AI tries to run that command, it is blocked and a warning is shown
+
+### "We want our team coding conventions followed"
+
+- **Admin**: Register the conventions in Skills
+- **IDE**: The AI automatically follows those rules when generating code
+
+### "We don't want sensitive files exposed to the AI"
+
+- **Admin**: Add `.env*` and `secrets/` to Exclude Patterns
+- **IDE**: The AI cannot read or search those files
+
+---
+
+## Phased Rollout
+
+### Phase 1 — Adoption and Familiarization (PoC)
+
+- **Goal**: Help the development team get comfortable with AI tools and experience the productivity gains
+- **Configuration**: Mostly **Recommended policies**. Only security-critical items are blocked as Required
+- **Result**: Fast adoption and a positive user experience
+
+### Phase 2 — Standardization and Stabilization
+
+- **Goal**: Reduce quality variance across teams and establish operational standards
+- **Configuration**: Convert coding conventions and build/test validation to **Required policies**
+- **Result**: Higher, more consistent code quality and reduced review costs
+
+### Phase 3 — Company-Wide Rollout and Governance
+
+- **Goal**: Minimize security risk and optimize costs
+- **Configuration**: Fine-grained model usage permissions, per-project policy separation, and stronger usage monitoring
+- **Result**: Safe, efficient operation even in large organizations
+
+<Tip>
+**In one sentence**
+
+Because centrally defined policies control how each developer's IDE behaves, CodePilot solves the problem of **"AI that's easy to adopt but hard to govern."**
+</Tip>
