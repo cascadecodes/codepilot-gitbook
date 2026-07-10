@@ -10,7 +10,7 @@
 
 총 **29장**이 남았습니다. (IDE 12 · CLI 4 · Admin 13)
 
-> 완료: `IDE_INSTALL_EXT_PANEL.png` · `IDE_INSTALL.png` · `IDE_FIRST_RUN.png`
+> 완료: `IDE_INSTALL_EXT_PANEL.png` · `IDE_INSTALL.png` · `IDE_FIRST_RUN.png` · `IDE_LOGIN.png`
 
 ---
 
@@ -18,7 +18,6 @@
 
 | 파일명 | 왜 | 사용 위치 |
 |--------|-----|----------|
-| `IDE_LOGIN.png` | v1 화면이라 **"Google로 로그인" 버튼 하나만** 보입니다. 문서는 Google·GitHub·Microsoft 세 가지를 설명하므로 현재 빌드로 다시 찍어야 합니다 | 로그인 |
 | `IDE_FIRST_RUN.png` | 개발 환경이 노출됩니다 — 터미널의 내부 빌드 경로·코어 바이너리명, 디버거 패널, 타사 확장(CLINE 등), 상태바 모델명. **패널 중심으로 다시 촬영** | 설치 |
 
 ---
