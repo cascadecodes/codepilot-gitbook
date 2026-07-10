@@ -31,16 +31,11 @@
 
 ---
 
-## IDE — AI 모델 연결 (2장 재촬영)
+## IDE — AI 모델 연결 (완료)
 
-완료: `IDE_AI_MODEL.png`(주 흐름) · `IDE_MODEL_KEY_SOURCE.png`(관리자 키 전환) · `IDE_MODEL_FORM_GEMINI.png`(모델 등록 폼).
+AI 모델 연결 문서의 스크린샷 5장이 모두 반영됐습니다: `IDE_AI_MODEL.png`(주 흐름) · `IDE_MODEL_KEY_SOURCE.png`(관리자 키 전환) · `IDE_MODEL_ADD.png` · `IDE_MODEL_FORM_GEMINI.png` · `IDE_MODEL_TEST.png`.
 
-아래 두 장은 **AWS 계정 ID가 노출**돼 커밋을 보류했습니다. 목록에 등록된 Bedrock 모델의 ARN(`arn:aws:bedrock:...:300718076880:...`)에 12자리 계정 번호가 찍혀 있습니다. 공개 저장소라 다시 찍어야 합니다.
-
-| 파일명 | 무엇을 찍나 | 재촬영 방법 |
-|--------|------------|------------|
-| `IDE_MODEL_ADD.png` | 설정 → AI 모델의 **사용자 정의 모델** 영역과 `+ 모델 추가` 버튼 | Bedrock(ARN) 모델을 목록에서 지우거나, Gemini 하나만 등록된 상태로 촬영 |
-| `IDE_MODEL_TEST.png` | 저장된 사용자 정의 모델 행 — **테스트 / 선택 / 편집 / 삭제** 버튼과 `API 키 저장됨` 표시 | 같은 이유. ARN이 보이지 않는 모델(Gemini 등) 행으로 촬영 |
+> `IDE_MODEL_ADD.png` · `IDE_MODEL_TEST.png`는 Bedrock 모델 ARN에 AWS 계정 ID(12자리)가 찍혀 있어, 해당 ARN 줄을 검은 박스로 마스킹한 뒤 커밋했습니다. 원본을 다시 쓸 일이 있으면 계정 ID가 다시 노출되지 않게 주의하세요.
 
 ---
 
