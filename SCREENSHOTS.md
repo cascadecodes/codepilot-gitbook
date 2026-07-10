@@ -31,18 +31,16 @@
 
 ---
 
-## IDE — AI 모델 연결 (4장)
+## IDE — AI 모델 연결 (2장 재촬영)
 
-문서 구조상 앞부분(주 흐름)은 **모델 선택 + 개인 API Key** 화면이고, 맨 아래 "사용자 정의 모델 직접 등록"만 **독립 실행(BYOK)** 전용입니다.
+완료: `IDE_AI_MODEL.png`(주 흐름) · `IDE_MODEL_KEY_SOURCE.png`(관리자 키 전환) · `IDE_MODEL_FORM_GEMINI.png`(모델 등록 폼).
 
-| 파일명 | 무엇을 찍나 | 모드 |
-|--------|------------|------|
-| `IDE_MODEL_KEY_SOURCE.png` | `API Key` 항목에 **관리자 API Key / 개인 API Key** 드롭다운이 펼쳐진 모습 (관리자 키가 등록돼 있어야 나타남) | 조직 로그인 |
-| `IDE_MODEL_ADD.png` | 설정 → AI 모델의 **사용자 정의 모델** 영역과 `+ 모델 추가` 버튼 | 독립 실행(BYOK) |
-| `IDE_MODEL_FORM_GEMINI.png` | **새 AI 모델 추가** 폼 — 프로바이더 `Google Gemini` 선택, API 엔드포인트 자동 입력됨. **모델 이름 `Gemini 3.1 Pro`, 모델 ID `gemini-3.1-pro-preview` 를 직접 입력한 상태로 촬영** (회색 예시 `gemini-2.5-pro` 가 남으면 안 됨) | 독립 실행(BYOK) |
-| `IDE_MODEL_TEST.png` | 저장된 사용자 정의 모델 목록 행 — **테스트 / 선택 / 편집 / 삭제** 버튼과 `API 키 저장됨` 표시 | 독립 실행(BYOK) |
+아래 두 장은 **AWS 계정 ID가 노출**돼 커밋을 보류했습니다. 목록에 등록된 Bedrock 모델의 ARN(`arn:aws:bedrock:...:300718076880:...`)에 12자리 계정 번호가 찍혀 있습니다. 공개 저장소라 다시 찍어야 합니다.
 
-> **완료:** 주 흐름 화면(`IDE_AI_MODEL.png` — AI 모델 선택 + 모델 설정 + 개인 API Key)은 반영됨. `ide/settings.mdx` 에서도 같은 이미지를 씁니다.
+| 파일명 | 무엇을 찍나 | 재촬영 방법 |
+|--------|------------|------------|
+| `IDE_MODEL_ADD.png` | 설정 → AI 모델의 **사용자 정의 모델** 영역과 `+ 모델 추가` 버튼 | Bedrock(ARN) 모델을 목록에서 지우거나, Gemini 하나만 등록된 상태로 촬영 |
+| `IDE_MODEL_TEST.png` | 저장된 사용자 정의 모델 행 — **테스트 / 선택 / 편집 / 삭제** 버튼과 `API 키 저장됨` 표시 | 같은 이유. ARN이 보이지 않는 모델(Gemini 등) 행으로 촬영 |
 
 ---
 
