@@ -1,16 +1,15 @@
 ---
 title: Connect an AI model
-description: A step-by-step guide to getting a Google Gemini API key and registering it in CodePilot.
+description: How to select an AI model and register an API key in CodePilot.
 ---
 
-Before CodePilot can generate answers, an **AI model** must be connected. How you connect one depends on how you're using CodePilot.
+CodePilot needs an **AI model** connected before it can generate responses.
 
-| Situation | What to do |
-|------|-----------|
-| You're connected to an organization | Your administrator has already registered the models. You just need to [pick one](#when-connected-to-an-organization) |
-| You use it personally / standalone | [Get and register your own API key](#1-get-a-gemini-api-key) |
+In most cases, you just **select a model and register a personal API key** in Settings. Google is included by default, so you can start right away. This guide uses **Google Gemini** as the example.
 
-This guide walks through the whole process from start to finish using **Google Gemini** as an example. The steps are the same for other providers.
+<Info>
+When an administrator (super) enables the providers and models the organization will use, members simply pick from that list. Registering a model that isn't on the list — via [Custom Models](#4-register-a-custom-model-standalone-only) — is **only for standalone setups used without signing in**.
+</Info>
 
 ---
 
@@ -19,7 +18,7 @@ This guide walks through the whole process from start to finish using **Google G
 You can get an API key from Google for free.
 
 <Steps>
-  <Step title="Open Google AI Studio">
+  <Step title="Go to Google AI Studio">
     In your browser, go to [aistudio.google.com/apikey](https://aistudio.google.com/apikey) and sign in with your Google account.
   </Step>
   <Step title="Create an API key">
@@ -31,44 +30,88 @@ You can get an API key from Google for free.
 </Steps>
 
 <Warning>
-An API key is like a password. Don't paste it into source code or internal messengers. If it leaks, delete it immediately in Google AI Studio and issue a new one.
+An API key is like a password. Don't paste it into source code or team chat. If it leaks, delete it immediately in Google AI Studio and issue a new one.
 </Warning>
 
 <Info>
-Gemini includes a free usage allowance. You may be charged if you exceed it, so check your billing settings and limits in Google AI Studio.
+Gemini includes a free usage tier. You may be charged if you exceed it, so check your billing settings and limits in Google AI Studio.
 </Info>
 
 ---
 
-## 2. Register the model in CodePilot
+## 2. Select a model and register an API key
+
+Register the key you obtained in Settings.
+
+<Steps>
+  <Step title="Open AI model settings">
+    Click the **gear (⚙) icon** at the top right of the chat panel, then select **AI Models** from the left menu.
+
+    ![AI Models settings](/images/IDE_AI_MODEL.png)
+  </Step>
+
+  <Step title="Select an AI model">
+    In the **Select AI Model** dropdown, choose the provider you want to use. **Google** is included by default, so you can leave it as-is.
+  </Step>
+
+  <Step title="Choose a model">
+    In the **model settings** area below (Configure the API settings for the selected model), open the **Model** dropdown and choose the model to use. (e.g., `Gemini 3.0 Flash`)
+  </Step>
+
+  <Step title="Register a personal API key">
+    Set the **API Key** item to **Personal API Key**, then paste the key you copied in step 1 into the **Personal API Key** field and click **Save**.
+  </Step>
+</Steps>
+
+Now type any question in the chat to confirm the connection.
+
+```
+Hi there! Just checking that everything's connected properly.
+```
+
+<Tip>
+Use the **Streaming · Native tool calls · Thinking · Multimodal** toggles to adjust how responses are generated. See the [Settings](/en/ide/settings) guide for details.
+</Tip>
+
+---
+
+## 3. Switching to the admin key
+
+If your administrator has registered an API key for the organization, a dropdown to choose between the admin key and a personal key appears under the **API Key** item. Switching to the admin key lets you start using it right away without your own key.
+
+{/* SCREENSHOT: Settings > AI Models while signed in to an organization — the "API Key" item with the Admin API Key / Personal API Key dropdown expanded */}
+![Choosing the API key source](/images/IDE_MODEL_KEY_SOURCE.png)
+
+| Option | Meaning |
+|------|------|
+| **Admin API Key** | Uses the key registered by the organization. The organization covers the cost |
+| **Personal API Key** | Uses a key you issued yourself. You cover the cost |
 
 <Info>
-This screen only appears in a **standalone (BYOK) environment used without signing in**. If you're signed in to an organization, skip ahead to [When connected to an organization](#when-connected-to-an-organization).
+When both an admin key and a personal key exist, **Admin API Key** is selected by default. If no keys are registered at all, it shows **No keys registered** — in that case, ask your administrator or register a personal key.
+</Info>
+
+---
+
+## 4. Register a custom model (standalone only)
+
+<Info>
+This method is **only for standalone (BYOK) setups used without signing in**. Use it to register a model that isn't in the provider list above, specifying its endpoint directly. The **Custom Models** section does not appear when you're signed in to an organization.
 </Info>
 
 <Steps>
-  <Step title="Open Settings">
-    Click the **gear (⚙) icon** at the top right of the chat panel.
-  </Step>
-
-  <Step title="Add a model from the AI Models tab">
-    Select **AI Models** from the left menu, then click **+ Add Model** under **Custom Models**.
-
-    <Info>
-    The **Custom Models** section only appears in a **standalone (BYOK)** setup — one used without signing in. If you're signed in to an organization, follow [When connected to an organization](#when-connected-to-an-organization) instead of this screen.
-    </Info>
+  <Step title="Add a model">
+    Under **Custom Models** in Settings → **AI Models**, click **+ Add Model**.
 
     {/* SCREENSHOT: The Settings > AI Models tab in standalone (BYOK) mode — the "Custom Models" area with the "+ Add Model" button and the empty-list message */}
     ![Adding a custom model](/images/IDE_MODEL_ADD.png)
   </Step>
 
   <Step title="Select a provider">
-    In the **Provider** dropdown, choose **Google Gemini**.
-
-    Once you select it, the **API Endpoint** is filled in automatically. Leave this value as-is.
+    In the **Provider** dropdown, choose **Google Gemini**. Once you select it, the **API Endpoint** is filled in automatically. Leave this value as-is.
 
     {/* SCREENSHOT: The "Add New AI Model" form — Provider set to Google Gemini with the API Endpoint auto-filled */}
-    ![Gemini model registration form](/images/IDE_MODEL_FORM_GEMINI.png)
+    ![Gemini model form](/images/IDE_MODEL_FORM_GEMINI.png)
   </Step>
 
   <Step title="Enter the model details">
@@ -84,97 +127,27 @@ This screen only appears in a **standalone (BYOK) environment used without signi
     </Warning>
   </Step>
 
-  <Step title="Paste the API key">
-    In the **API Key** field, paste the key you copied in step 1.
-
-    <Info>
-    Even though the label reads "(optional)", you **must** enter it to use Gemini. The field is optional only because you can also register in-house model servers that require no authentication.
-    </Info>
+  <Step title="Paste the API key and save">
+    Paste the key you copied in step 1 into the **API Key** field. Leave everything else (auth method, context window, temperature, extra headers, etc.) at its default and click **Save**.
   </Step>
 
-  <Step title="Save">
-    Leave all the other fields (Auth Method, Context Window, Default Temperature, Extra Headers, and so on) **untouched at their defaults.** If you leave them blank, the model's own defaults apply.
+  <Step title="Test, then select">
+    Click **Test** next to the saved model to confirm **Connection OK**, then click **Select** to put it in the **✓ Active** state.
 
-    Click **Save** and the model is added to the list.
-  </Step>
-</Steps>
-
----
-
-## 3. Verify the connection and start using it
-
-Use the buttons next to the model you saved to verify it and make it active.
-
-{/* SCREENSHOT: The registered Gemini entry in the Custom Models list — the Test/Select/Edit/Delete buttons and the "API key saved" indicator */}
-![Testing and selecting the model](/images/IDE_MODEL_TEST.png)
-
-<Steps>
-  <Step title="Test">
-    Click **Test**. If it shows **Connection OK**, you're all set.
-
-    If you see **Connection failed**, check [Troubleshooting](#troubleshooting) below.
-  </Step>
-  <Step title="Select">
-    Click **Select** and a **✓ Active** badge appears, meaning this model is now used for actual chats.
+    {/* SCREENSHOT: A registered Gemini entry in the custom-model list — Test/Select/Edit/Delete buttons and the "API key saved" indicator */}
+    ![Testing and selecting the model](/images/IDE_MODEL_TEST.png)
 
     <Warning>
     If you only save and don't click **Select**, the model is merely registered and won't be used. Be sure to select it too.
     </Warning>
   </Step>
-  <Step title="Confirm in chat">
-    Back in the chat panel, the model you just registered appears under the **Custom** group in the model picker dropdown. You can switch to it right from there, too.
-  </Step>
 </Steps>
-
-Now try typing any question into the chat.
-
-```
-Hi there! Just checking that everything's connected properly.
-```
-
----
-
-## When connected to an organization
-
-When you use CodePilot signed in to an organization, the **Custom Models** screen doesn't appear. That's because your administrator has already registered the models the organization will use. Here you only need to pick a model and connect an API key.
-
-<Steps>
-  <Step title="Select an AI model">
-    In Settings → **AI Models**, select the model you want to use.
-
-    ![AI Models settings](/images/IDE_AI_MODEL.png)
-  </Step>
-
-  <Step title="Choose a model in the model settings">
-    In the **model settings** area below (Configure the API settings for the selected model), open the dropdown and choose the model to use.
-  </Step>
-
-  <Step title="Register a personal API key">
-    Paste your key into the **Enter API key** field and click **Save API key**. You can reuse the Gemini key you issued in [step 1](#1-get-a-gemini-api-key) above.
-  </Step>
-</Steps>
-
-### Switching to the admin key
-
-If your administrator has registered an API key for the organization, a dropdown to choose between the admin key and a personal key appears under the **API Key** item. Switching to the admin key lets you start using it right away without your own key.
-
-{/* SCREENSHOT: Settings > AI Models while signed in to an organization — the "API Key" item with a dropdown to choose Admin API Key / Personal API Key */}
-![Choosing the API key source](/images/IDE_MODEL_KEY_SOURCE.png)
-
-| Option | Meaning |
-|------|------|
-| **Admin API Key** | Uses the key registered by the organization. The organization covers the cost |
-| **Personal API Key** | Uses a key you issued yourself. You cover the cost |
-
-<Info>
-When both an admin key and a personal key exist, **Admin API Key** is selected by default. If no keys are registered at all, it shows **No keys registered** — in that case, ask your administrator or register a personal key.
-</Info>
 
 ---
 
 ## Using a different provider
 
-Just choose a different provider from the Provider dropdown. The steps are identical to Gemini; only **where you get the API key** differs.
+Choose a different provider in the Provider dropdown. The steps are the same as for Gemini — only **where you get the API key** differs.
 
 | Provider | Example model ID |
 |--------|------------|
@@ -187,10 +160,10 @@ Just choose a different provider from the Provider dropdown. The steps are ident
 Model IDs change whenever a provider releases a new model. If the value above doesn't work, check the provider's official documentation for the current model ID.
 </Info>
 
-You can also register cloud providers (Vertex AI · Azure OpenAI · AWS Bedrock) and in-house servers (OpenAI-compatible endpoints).
+You can also register cloud providers (Vertex AI · Azure OpenAI · AWS Bedrock) and self-hosted servers (OpenAI-compatible endpoints).
 
 <Tip>
-If you want to work without internet access, you can use a **local model** that needs no API key. Connect a local model server in Settings → AI Models.
+To use it without an internet connection, you can run a **local model** that needs no API key. Connect a local model server under Settings → AI Models.
 </Tip>
 
 ---
@@ -198,29 +171,29 @@ If you want to work without internet access, you can use a **local model** that 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="The test shows 'Connection failed'">
+  <Accordion title="No response in chat">
+    The **API Key** item may be set to **Personal API Key** without a saved key, or there may be no admin key available. Check that you entered your personal key and clicked **Save**.
+  </Accordion>
+
+  <Accordion title='It shows "No keys registered"'>
+    Neither an admin key nor a personal key is registered. Issue and register a personal key, or ask your administrator to register an organization key.
+  </Accordion>
+
+  <Accordion title="The model I want isn't in the list">
+    Your administrator (super) may not have enabled that provider. Ask your administrator. In a standalone setup used without signing in, you can register it yourself via [Custom Models](#4-register-a-custom-model-standalone-only).
+  </Accordion>
+
+  <Accordion title='A custom-model test shows "Connection failed"'>
     Check the following, in order.
 
-    1. **API Key** — make sure no leading or trailing spaces got mixed in when you copied it. Try pasting it again.
-    2. **Model ID** — it must be the exact value defined by Google, like `gemini-3.1-pro-preview`. Don't confuse it with the model name (`Gemini 3.1 Pro`), and make sure you didn't leave the faint example text in the field.
-    3. **API Endpoint** — reselecting the provider restores the correct value.
-    4. **Network** — an internal firewall may be blocking outbound API calls. Ask your administrator.
+    1. **API key** — make sure no leading/trailing whitespace got copied in, and paste it again.
+    2. **Model ID** — it must be the exact value defined by Google, like `gemini-3.1-pro-preview`. Don't confuse it with the model name (`Gemini 3.1 Pro`).
+    3. **API endpoint** — reselecting the provider restores the correct value.
+    4. **Network** — a corporate firewall may be blocking outbound API calls. Contact your administrator.
   </Accordion>
 
-  <Accordion title="I don't see the 'Custom Models' item">
-    You're signed in to an organization. In that case you use the models registered by your administrator and can't add models yourself. See [When connected to an organization](#when-connected-to-an-organization).
-  </Accordion>
-
-  <Accordion title="I saved a model but get no answers in chat">
-    Saving alone doesn't apply the model. Check that you clicked the **Select** button in the model list to put it in the **✓ Active** state.
-  </Accordion>
-
-  <Accordion title="Do I have to re-enter the API key?">
-    Once saved, it's stored securely. If you leave the API Key field blank when editing a model, the existing key is kept as-is.
-  </Accordion>
-
-  <Accordion title="I'm getting a quota-exceeded error">
-    You may have used up your free Gemini allowance. Check your usage and billing settings in Google AI Studio.
+  <Accordion title="Quota exceeded error">
+    You may have used up the Gemini free tier. Check your usage and billing settings in Google AI Studio.
   </Accordion>
 </AccordionGroup>
 
