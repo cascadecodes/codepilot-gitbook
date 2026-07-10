@@ -53,15 +53,6 @@
             ]
           },
           {
-            "tab": "CLI",
-            "groups": [
-              {
-                "group": "CLI",
-                "pages": ["cli/getting-started", "cli/commands"]
-              }
-            ]
-          },
-          {
             "tab": "Admin",
             "groups": [
               {
@@ -113,15 +104,6 @@
                   "en/ide/settings",
                   "en/ide/use-cases"
                 ]
-              }
-            ]
-          },
-          {
-            "tab": "CLI",
-            "groups": [
-              {
-                "group": "CLI",
-                "pages": ["en/cli/getting-started", "en/cli/commands"]
               }
             ]
           },

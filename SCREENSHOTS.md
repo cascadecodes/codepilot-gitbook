@@ -8,7 +8,9 @@
 
 ---
 
-총 **27장**이 남았습니다. (IDE 10 · CLI 4 · Admin 13)
+총 **23장**이 남았습니다. (IDE 10 · Admin 13)
+
+> CLI 탭은 나중에 작성하기로 하여 문서에서 제거했습니다. CLI 스크린샷 4장(`CLI_WELCOME` · `CLI_LOGIN` · `CLI_SLASH` · `CLI_HEADLESS`)은 그때 다시 목록에 추가하면 됩니다.
 
 > 완료: `IDE_INSTALL.png` · `IDE_INSTALL_EXT_PANEL.png` · `IDE_FIRST_RUN.png` · `IDE_LOGIN.png` · `IDE_LOGIN_LOCAL.png` · `IDE_LOGIN_LICENSE.png`
 >
@@ -42,17 +44,6 @@
 | `IDE_MODEL_FORM_GEMINI.png` | **새 AI 모델 추가** 폼 — 프로바이더 `Google Gemini` 선택, API 엔드포인트 자동 입력됨. **모델 이름은 `Gemini 3.1 Pro`, 모델 ID는 `gemini-3.1-pro-preview` 를 직접 입력한 상태로 촬영** (회색 예시 `gemini-2.5-pro` 가 남아 있으면 안 됨) | AI 모델 연결 |
 | `IDE_MODEL_TEST.png` | 저장된 Gemini 모델 목록 행 — **테스트 / 선택 / 편집 / 삭제** 버튼과 `API 키 저장됨` 표시 | AI 모델 연결 |
 | `IDE_MODEL_KEY_SOURCE.png` | **조직 로그인 상태**의 설정 → AI 모델 — `API Key` 항목에 `관리자 API Key` / `개인 API Key` 드롭다운이 펼쳐진 모습 | AI 모델 연결 |
-
----
-
-## CLI (4장)
-
-| 파일명 | 무엇을 찍나 | 사용 위치 |
-|--------|------------|----------|
-| `CLI_WELCOME.png` | 첫 실행 시 환영 화면 — 로고 박스와 Model / Mode / Permission / Folder / User / Organization / Project 목록 | CLI 시작하기 |
-| `CLI_LOGIN.png` | 로그인 게이트 화면 — "🔒 로그인이 필요합니다" 안내와 Enter로 로그인 시작 | CLI 시작하기 |
-| `CLI_SLASH.png` | 입력창에서 `/` 입력 시 뜨는 슬래시 명령어 자동완성 목록 | CLI 명령어 |
-| `CLI_HEADLESS.png` | 터미널에서 `codepilot -p "..."` 실행 결과가 표준 출력으로 나온 화면 | CLI 명령어 |
 
 ---
 
