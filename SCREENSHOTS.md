@@ -8,24 +8,21 @@
 
 ---
 
-총 **16장**이 남았습니다. (IDE 3 · Admin 13)
+총 **12장**이 남았습니다. (IDE 1 · Admin 11)
 
 > CLI 탭은 나중에 작성하기로 하여 문서에서 제거했습니다. CLI 스크린샷 4장(`CLI_WELCOME` · `CLI_LOGIN` · `CLI_SLASH` · `CLI_HEADLESS`)은 그때 다시 목록에 추가하면 됩니다.
 
-> 완료: `IDE_INSTALL.png` · `IDE_INSTALL_EXT_PANEL.png` · `IDE_FIRST_RUN.png` · `IDE_LOGIN.png` · `IDE_LOGIN_LOCAL.png` · `IDE_LOGIN_LICENSE.png`
+> 완료: 설치·로그인(`IDE_INSTALL` · `IDE_INSTALL_EXT_PANEL` · `IDE_FIRST_RUN` · `IDE_LOGIN` · `IDE_LOGIN_LOCAL` · `IDE_LOGIN_LICENSE`) · 채팅 모드 5장 · AI 모델 5장 · `IDE_ACCOUNT` · `IDE_ACCOUNT_ORG` · `IDE_HOOKS` · `IDE_AGENTS` · `ADMIN_LOGIN`
 >
 > 촬영 시 화면에 무엇이 함께 찍히는지 확인하세요. 이 저장소는 공개(public)이고, 나중에 이미지를 바꿔도 git 히스토리에는 남습니다.
 
 ---
 
-## IDE — 설정 (4장)
+## IDE — 남은 1장
 
 | 파일명 | 무엇을 찍나 | 사용 위치 |
 |--------|------------|----------|
-| `IDE_ACCOUNT_ORG.png` | 설정 → 계정 탭의 **조직 연결** 영역 — `cpk_...` 플레이스홀더 입력창과 **등록** 버튼 | 조직 연결 |
 | `IDE_INLINE_COMPLETION.png` | 에디터에서 회색 Ghost Text로 코드 제안이 뜬 상태 (Tab 수락 전) | 주요 기능 |
-| `IDE_HOOKS.png` | 설정 → **Hooks** 탭 — 등록된 훅 목록과 이벤트/명령어/타임아웃 입력 폼 | 설정 |
-| `IDE_AGENTS.png` | 설정 → **Agents** 탭 — 등록된 에이전트 목록과 이름/설명/시스템 프롬프트/허용 도구 폼 | 설정 |
 
 ---
 
@@ -37,12 +34,10 @@ AI 모델 연결 문서의 스크린샷 5장이 모두 반영됐습니다: `IDE_
 
 ---
 
-## Admin — 로그인 · 조직 등록 (7장)
+## Admin — 로그인 · 조직 등록 (5장)
 
 | 파일명 | 무엇을 찍나 | 사용 위치 |
 |--------|------------|----------|
-| `ADMIN_LOGIN.png` | 로그인 페이지 — 이메일/비밀번호 폼과 소셜 로그인 버튼, 우측 상단 한국어/English 토글 | 로그인 및 조직 등록 |
-| `ADMIN_SIGNUP.png` | 회원가입 페이지 — 이름/이메일/비밀번호 입력 폼 | 로그인 및 조직 등록 |
 | `ADMIN_ONBOARDING.png` | 조직 설정 화면 — **새 조직 만들기** / **API 키로 조직 가입** 두 개의 카드 | 로그인 및 조직 등록 |
 | `ADMIN_ORG_CREATE.png` | 조직 만들기 폼 — 조직명(필수), 부서(선택) 입력창과 **조직 생성** 버튼 | 로그인 및 조직 등록 |
 | `ADMIN_ORG_JOIN.png` | API 키로 조직 가입 폼 — `cpk_` 플레이스홀더 입력창과 **조직 가입** 버튼 | 로그인 및 조직 등록 |
