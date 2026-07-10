@@ -35,7 +35,7 @@ When you make a request via chat, the AI creates and modifies files directly. It
 
 ## Inline Diff Preview and Approval
 
-![Diff view](/images/IDE_DIFF.png)
+![Diff view](/images/en/IDE_DIFF.png)
 
 **Compare the code the AI modified right inside the editor** and apply only the parts you want.
 
@@ -71,7 +71,7 @@ Even when errors occur, it attempts an immediate fix without any web searching, 
 
 Complex requests are split into multiple subtasks and processed. Tasks that don't depend on each other run concurrently, while tasks that need the results of an earlier step run in sequence. Once all tasks are done, the results are merged into one and verified with builds and tests.
 
-![Task progress](/images/IDE_JOB_QUEUE.png)
+![Task progress](/images/en/IDE_JOB_QUEUE.png)
 
 ---
 
@@ -87,7 +87,7 @@ Turns "a procedure people have to remember" into **a procedure the system enforc
 
 ## Keyword-Based Automatic Command Execution (Hot Load)
 
-![Hot Load](/images/IDE_HOTLOAD.png)
+![Hot Load](/images/en/IDE_HOTLOAD.png)
 
 Register frequently repeated tasks as keywords, and simply typing a sentence containing that keyword in the chat runs a predefined command. It runs even when the wording isn't an exact match, as long as the meaning comes through.
 
@@ -95,7 +95,7 @@ Register frequently repeated tasks as keywords, and simply typing a sentence con
 
 ## Security Guardrails
 
-![Security settings](/images/IDE_SCRURITY.png)
+![Security settings](/images/en/IDE_SCRURITY.png)
 
 Before the AI acts, it pre-validates every operation to block dangerous executions.
 
@@ -116,7 +116,7 @@ No matter how autonomously the AI operates, **it cannot cross the security bound
 The moment you type, the AI suggests the code that comes next as gray text. Accept it with the `Tab` key, or dismiss it with `Esc`. It considers not only the current file but also the context of other files open in the editor.
 
 {/* SCREENSHOT: A code suggestion shown as gray Ghost Text in the editor (before accepting with Tab) */}
-![Inline code completion](/images/IDE_INLINE_COMPLETION.png)
+![Inline code completion](/images/en/IDE_INLINE_COMPLETION.png)
 
 <Tip>
 It's OFF by default. Turn it on in Settings → **General**. If you assign a lightweight local model dedicated to completion, you can use it quickly with no API costs.
@@ -126,7 +126,7 @@ It's OFF by default. Turn it on in Settings → **General**. If you assign a lig
 
 ## Leveraging Project Context and Internal Knowledge
 
-![RAG](/images/IDE_RAG.png)
+![RAG](/images/en/IDE_RAG.png)
 
 The AI figures out your project structure and the tech stack in use on its own, and searches the internal documents (RAG) registered by your Organization to incorporate them into its answers. It also references the syntax and type errors that VS Code detects.
 
@@ -138,7 +138,7 @@ It generates code **"tailored to your project"** rather than generic examples fr
 
 ## Next-Task Suggestions
 
-![Next-task suggestions](/images/IDE_PROMPT_SUGGESTION.png)
+![Next-task suggestions](/images/en/IDE_PROMPT_SUGGESTION.png)
 
 When a task finishes, it suggests follow-up tasks that naturally come next. Click the button and that request is sent right away.
 
@@ -146,7 +146,7 @@ When a task finishes, it suggests follow-up tasks that naturally come next. Clic
 
 ## Clarifying Questions from the AI
 
-![AI question](/images/IDE_ASK_QUESTION.png)
+![AI question](/images/en/IDE_ASK_QUESTION.png)
 
 When a decision is needed mid-task, the AI presents options and asks you. Answer with a single click and it continues the work based on your choice.
 
@@ -158,6 +158,6 @@ Because the AI **confirms rather than assumes**, you get the result you want.
 
 ## MCP Tool Integration
 
-![MCP](/images/IDE_MCP.png)
+![MCP](/images/en/IDE_MCP.png)
 
 Connect external tools such as GitHub, Jira, and in-house systems so the AI can operate them directly. MCP servers pre-registered by your Organization administrator can be used right away with no additional setup.
