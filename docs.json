@@ -30,8 +30,8 @@
                 "pages": [
                   "getting-started/install",
                   "getting-started/sign-in",
-                  "getting-started/organization",
                   "getting-started/ai-model",
+                  "getting-started/organization",
                   "getting-started/quickstart"
                 ]
               }
@@ -85,8 +85,8 @@
                 "pages": [
                   "en/getting-started/install",
                   "en/getting-started/sign-in",
-                  "en/getting-started/organization",
                   "en/getting-started/ai-model",
+                  "en/getting-started/organization",
                   "en/getting-started/quickstart"
                 ]
               }

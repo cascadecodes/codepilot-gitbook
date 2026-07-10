@@ -136,9 +136,27 @@ Hi there! Just checking that everything's connected properly.
 
 ## When connected to an organization
 
-When you use CodePilot signed in to an organization, the **Custom Models** screen doesn't appear. That's because your administrator has already registered the models the organization will use.
+When you use CodePilot signed in to an organization, the **Custom Models** screen doesn't appear. That's because your administrator has already registered the models the organization will use. Here you only need to pick a model and connect an API key.
 
-In Settings → **AI Models**, pick a model, then choose which key to use under the **API Key** item.
+<Steps>
+  <Step title="Select an AI model">
+    In Settings → **AI Models**, select the model you want to use.
+
+    ![AI Models settings](/images/IDE_AI_MODEL.png)
+  </Step>
+
+  <Step title="Choose a model in the model settings">
+    In the **model settings** area below (Configure the API settings for the selected model), open the dropdown and choose the model to use.
+  </Step>
+
+  <Step title="Register a personal API key">
+    Paste your key into the **Enter API key** field and click **Save API key**. You can reuse the Gemini key you issued in [step 1](#1-get-a-gemini-api-key) above.
+  </Step>
+</Steps>
+
+### Switching to the admin key
+
+If your administrator has registered an API key for the organization, a dropdown to choose between the admin key and a personal key appears under the **API Key** item. Switching to the admin key lets you start using it right away without your own key.
 
 {/* SCREENSHOT: Settings > AI Models while signed in to an organization — the "API Key" item with a dropdown to choose Admin API Key / Personal API Key */}
 ![Choosing the API key source](/images/IDE_MODEL_KEY_SOURCE.png)
@@ -148,10 +166,8 @@ In Settings → **AI Models**, pick a model, then choose which key to use under 
 | **Admin API Key** | Uses the key registered by the organization. The organization covers the cost |
 | **Personal API Key** | Uses a key you issued yourself. You cover the cost |
 
-To use a personal key, paste it into the **Personal API Key** field and click **Save**. You can reuse the Gemini key you issued in [step 1](#1-get-a-gemini-api-key) above.
-
 <Info>
-If no keys are registered at all, it shows **No keys registered**. In that case, ask your administrator or register a personal key.
+When both an admin key and a personal key exist, **Admin API Key** is selected by default. If no keys are registered at all, it shows **No keys registered** — in that case, ask your administrator or register a personal key.
 </Info>
 
 ---
@@ -212,6 +228,11 @@ If you want to work without internet access, you can use a **local model** that 
 
 ## Next steps
 
-<Card title="Quickstart" icon="rocket" href="/en/getting-started/quickstart">
-  How to send your first request and approve changes
-</Card>
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/en/getting-started/quickstart">
+    Send your first request and approve changes right away
+  </Card>
+  <Card title="Connect to an organization" icon="building" href="/en/getting-started/organization">
+    Using it as a team? Join an organization to apply administrator policies
+  </Card>
+</CardGroup>
