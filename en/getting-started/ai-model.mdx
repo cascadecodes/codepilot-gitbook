@@ -74,12 +74,16 @@ This screen only appears in a **standalone (BYOK) environment used without signi
   </Step>
 
   <Step title="Enter the model details">
-    You only need to fill in the two fields below. You can even use the faint example text shown in each field as-is.
+    Type the two values below yourself.
 
     | Field | Value to enter |
     |------|----------|
-    | **Model Name** | `Gemini 2.5 Pro` — this is just the name shown in the list, so use whatever you like |
-    | **Model ID** | `gemini-2.5-pro` — must be the exact value defined by Google |
+    | **Model Name** | `Gemini 3.1 Pro` — this is just the name shown in the list, so use whatever you like |
+    | **Model ID** | `gemini-3.1-pro-preview` — must be the exact value defined by Google |
+
+    <Warning>
+    The faint example text in the field (`gemini-2.5-pro`) refers to an older model. Don't leave it as-is — type the value above instead.
+    </Warning>
   </Step>
 
   <Step title="Paste the API key">
@@ -161,9 +165,13 @@ Just choose a different provider from the Provider dropdown. The steps are ident
 | Provider | Example model ID |
 |--------|------------|
 | OpenAI | `gpt-4o` |
-| Anthropic Claude | `claude-sonnet-4-5` |
-| Google Gemini | `gemini-2.5-pro` |
+| Anthropic Claude | `claude-opus-4-6` |
+| Google Gemini | `gemini-3.1-pro-preview` |
 | DeepSeek | `deepseek-chat` |
+
+<Info>
+Model IDs change whenever a provider releases a new model. If the value above doesn't work, check the provider's official documentation for the current model ID.
+</Info>
 
 You can also register cloud providers (Vertex AI · Azure OpenAI · AWS Bedrock) and in-house servers (OpenAI-compatible endpoints).
 
@@ -180,7 +188,7 @@ If you want to work without internet access, you can use a **local model** that 
     Check the following, in order.
 
     1. **API Key** — make sure no leading or trailing spaces got mixed in when you copied it. Try pasting it again.
-    2. **Model ID** — it must be the exact value defined by Google, like `gemini-2.5-pro`. Don't confuse it with the model name.
+    2. **Model ID** — it must be the exact value defined by Google, like `gemini-3.1-pro-preview`. Don't confuse it with the model name (`Gemini 3.1 Pro`), and make sure you didn't leave the faint example text in the field.
     3. **API Endpoint** — reselecting the provider restores the correct value.
     4. **Network** — an internal firewall may be blocking outbound API calls. Ask your administrator.
   </Accordion>
