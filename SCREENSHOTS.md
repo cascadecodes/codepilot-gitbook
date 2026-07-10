@@ -8,7 +8,7 @@
 
 ---
 
-총 **12장**이 남았습니다. (IDE 1 · Admin 11)
+총 **1장**이 남았습니다. (IDE 1 · Admin 0)
 
 > CLI 탭은 나중에 작성하기로 하여 문서에서 제거했습니다. CLI 스크린샷 4장(`CLI_WELCOME` · `CLI_LOGIN` · `CLI_SLASH` · `CLI_HEADLESS`)은 그때 다시 목록에 추가하면 됩니다.
 
@@ -34,28 +34,11 @@ AI 모델 연결 문서의 스크린샷 5장이 모두 반영됐습니다: `IDE_
 
 ---
 
-## Admin — 로그인 · 조직 등록 (5장)
+## Admin (완료)
 
-| 파일명 | 무엇을 찍나 | 사용 위치 |
-|--------|------------|----------|
-| `ADMIN_ONBOARDING.png` | 조직 설정 화면 — **새 조직 만들기** / **API 키로 조직 가입** 두 개의 카드 | 로그인 및 조직 등록 |
-| `ADMIN_ORG_CREATE.png` | 조직 만들기 폼 — 조직명(필수), 부서(선택) 입력창과 **조직 생성** 버튼 | 로그인 및 조직 등록 |
-| `ADMIN_ORG_JOIN.png` | API 키로 조직 가입 폼 — `cpk_` 플레이스홀더 입력창과 **조직 가입** 버튼 | 로그인 및 조직 등록 |
-| `ADMIN_PENDING.png` | 승인 대기 화면 — "승인 대기중" 메시지, 이메일/기업명/부서, **승인 상태 확인** 버튼 | 로그인 및 조직 등록 |
-| `ADMIN_PROFILE.png` | 내 정보 페이지 — 프로필 카드, 계정 정보, 언어 선택, 비밀번호 변경 카드 | 로그인 및 조직 등록 |
+Admin 콘솔 스크린샷 13장이 모두 반영됐습니다: `ADMIN_LOGIN` · `ADMIN_DASHBOARD` · `ADMIN_ONBOARDING` · `ADMIN_ORG_CREATE` · `ADMIN_ORG_JOIN` · `ADMIN_PENDING` · `ADMIN_PROFILE` · `ADMIN_API_KEY` · `ADMIN_TEAM` · `ADMIN_HOOKS` · `ADMIN_AGENTS` · `ADMIN_ACCESS_LOG` · `ADMIN_ERROR_LOG`.
 
----
-
-## Admin — 관리 · 정책 · 로그 (6장)
-
-| 파일명 | 무엇을 찍나 | 사용 위치 |
-|--------|------------|----------|
-| `ADMIN_API_KEY.png` | API 키 관리 페이지 — 발급된 키 목록(마스킹된 키, 활성 상태, 생성일)과 **키 생성** 버튼 | 로그인 및 조직 등록 |
-| `ADMIN_TEAM.png` | 팀 관리 페이지 — 멤버 테이블(사용자/역할/API 키/상태/가입일/작업)과 상단 통계 카드 | 로그인 및 조직 등록 |
-| `ADMIN_HOOKS.png` | Hooks 페이지 — 등록된 훅 목록과 이벤트/명령어/도구 매칭/타임아웃 입력 폼 | 정책 설정 |
-| `ADMIN_AGENTS.png` | Agents 페이지 — 등록된 에이전트 목록(`@이름`, 허용 도구 수, 읽기전용 여부)과 입력 폼 | 정책 설정 |
-| `ADMIN_ACCESS_LOG.png` | 접속 로그 페이지 — 요약 카드(총 활동/성공/실패/최근)와 로그 테이블(시간/사용자/활동/IP/상태) | 모니터링 및 로그 |
-| `ADMIN_ERROR_LOG.png` | 에러 로그 페이지 — 레벨별 요약 카드(에러/경고/정보)와 로그 테이블, 행 확장 시 스택 트레이스 | 모니터링 및 로그 |
+> `ADMIN_DASHBOARD.png`는 최근 활동·프로필에 실명과 이메일이 찍혀 있어 해당 부분을 검은 박스로 마스킹한 뒤 커밋했습니다. 나머지 Admin 화면은 테스트 계정 기준으로 원본 그대로 반영했습니다.
 
 ---
 
